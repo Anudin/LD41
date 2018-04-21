@@ -18,7 +18,6 @@ func _ready():
 func _process(delta):
 	position += direction * speed * delta
 
-# Why am I only receiving one shoot?
 func _on_text_command(command):
 	movement(command)
 	

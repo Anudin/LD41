@@ -25,6 +25,7 @@ __meta__ = {
 
 [node name="UI" type="Control" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -159,27 +160,23 @@ position = Vector2( 319.598, 436.548 )
 
 [node name="AI" parent="AI" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 948.856, 389.658 )
+position = Vector2( 1226.22, 73.6323 )
 
 [node name="AI2" parent="AI" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 1197.73, 593.162 )
+position = Vector2( 1227.34, 611.668 )
 
 [node name="AI3" parent="AI" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 748.575, 228.35 )
+position = Vector2( 104.559, 74.7488 )
 
 [node name="AI4" parent="AI" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 556.534, 254.293 )
-
-[node name="AI5" parent="AI" index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 562.242, 487.93 )
+position = Vector2( 106.834, 615.164 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 764.978, 361.611 )
+position = Vector2( 640, 360 )
 
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 

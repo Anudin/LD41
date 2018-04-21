@@ -2,8 +2,11 @@ extends Node2D
 
 # TODO: Fill queue from start / finish / clear it
 
+# TODO: progression - waves / levels / ...?
 # TODO: shooting text gets longer with time / level / difficulty settings
-# TODO: REALLY satisfying shooting mechanic.
+
+# TODO: REALLY satisfying shooting mechanic, explosions
+# TODO: Sound
 
 const COMMANDS = ["up", "down", "left", "right", "stop"]
 const TEMP_COMMANDS = {"sdf": "shoot"}

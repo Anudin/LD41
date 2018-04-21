@@ -1,5 +1,9 @@
 extends Node
 
+# TODO: slow down / relax depending on distance
+# TODO: dodge walls
+# TODO (maybe): relaxed state + random walk.
+
 onready var Parent = get_parent()
 onready var Player = $"/root/Main/Player"
 
