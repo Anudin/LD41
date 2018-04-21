@@ -43,3 +43,6 @@ func _on_text_command(command):
 			direction.x = 1
 	elif command == "stop":
 		direction = Vector2(0,0)
+
+func _on_screen_collision():
+	direction = Vector2(0,0)

@@ -42,4 +42,4 @@ func update_temp_commands_display():
 	for key in TEMP_COMMANDS.keys():
 		command_display += TEMP_COMMANDS[key] + ": " + key + "\n"
 
-	$CommandMapping.text = command_display
+	$UI/CommandMapping.text = command_display

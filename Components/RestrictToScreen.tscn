@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Components/RestrictToScreen.gd" type="Script" id=1]
+
+[node name="RestrictToScreen" type="Node"]
+
+script = ExtResource( 1 )
+extend = Vector2( 0, 0 )
+
+

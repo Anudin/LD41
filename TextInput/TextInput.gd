@@ -2,7 +2,7 @@ extends Control
 
 signal text_command
 
-onready var Main = get_node("/root/Main")
+onready var Main = $"/root/Main"
 
 const SUBMIT = [KEY_ENTER, KEY_SPACE]
 const DELETE = [KEY_BACKSPACE, KEY_DELETE]
