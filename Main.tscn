@@ -160,8 +160,6 @@ position = Vector2( 718.621, 300.061 )
 
 position = Vector2( 779.663, 357.536 )
 
-[connection signal="queue_released" from="UI/TextInput" to="." method="_on_queue_released"]
-
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 
 [connection signal="text_command" from="UI/TextInput" to="Player" method="_on_text_command"]

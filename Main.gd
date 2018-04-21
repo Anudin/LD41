@@ -16,7 +16,7 @@ const TEMP_COMMANDS = {"sdf": "shoot"}
 func _ready():
 	randomize()
 	
-	_on_queue_released()
+	_on_queue_updated([])
 	update_temp_commands_display()
 
 #func _process(delta):
@@ -33,13 +33,13 @@ func verify_command(command):
 		return action
 
 func _on_queue_updated(queue):
-	$UI/CommandQueue.text = ""
-	
-	for command in queue:
-		$UI/CommandQueue.text += command + "\n"
-
-func _on_queue_released():
-	$UI/CommandQueue.text = "..."
+	if queue.size() == 0:
+		$UI/CommandQueue.text = "..."
+	else:
+		$UI/CommandQueue.text = ""
+		
+		for command in queue:
+			$UI/CommandQueue.text += command + "\n"
 
 func update_temp_commands(action_code):
 	var action = TEMP_COMMANDS[action_code]

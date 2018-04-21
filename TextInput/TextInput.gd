@@ -2,7 +2,6 @@ extends Control
 
 signal text_command
 signal queue_updated
-signal queue_released
 
 onready var Main = $"/root/Main"
 
@@ -58,8 +57,5 @@ func keyboard_input(event):
 				emit_signal("queue_updated", queue)
 
 func submit_queue():
-	for command in queue:
-		emit_signal("text_command", command)
-	
-	emit_signal("queue_released")
-	queue.clear()
+	emit_signal("text_command", queue.pop_front())
+	emit_signal("queue_updated", queue)
