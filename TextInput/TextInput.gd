@@ -55,7 +55,7 @@ func keyboard_input(event):
 
 func submit_queue():
 	for command in queue:
-		queue.clear()
 		emit_signal("text_command", command)
 	
 	emit_signal("queue_released")
+	queue.clear()

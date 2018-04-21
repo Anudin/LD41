@@ -1,6 +1,8 @@
 extends Sprite
 
-var direction = Vector2(0,0)
+var Bullet = preload("res://Player/Bullet.tscn")
+
+var direction = Vector2(0,1)
 var speed = 60
 
 func _ready():
@@ -11,8 +13,17 @@ func _ready():
 func _process(delta):
 	position += direction * speed * delta
 
-# TODO: Refactor
+# Why am I only receiving one shoot?
 func _on_text_command(command):
+	movement(command)
+	
+	if command == "shoot":
+		var bullet = Bullet.instance()
+		bullet.setup(direction)
+		bullet.position = position
+		$"/root/Main".add_child(bullet)
+
+func movement(command):
 	if command == "up":
 		direction.x = 0
 		
