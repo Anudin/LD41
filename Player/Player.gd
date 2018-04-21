@@ -3,6 +3,7 @@ extends Sprite
 var Bullet = preload("res://Player/Bullet.tscn")
 
 var direction = Vector2(0,0)
+var last_direction = Vector2(0,1)
 var speed = 60
 
 func _ready():
@@ -18,8 +19,15 @@ func _on_text_command(command):
 	movement(command)
 	
 	if command == "shoot":
+		var bullet_direction
+		
+		if direction != Vector2(0,0):
+			bullet_direction = direction
+		else:
+			bullet_direction = last_direction
+				
 		var bullet = Bullet.instance()
-		bullet.setup(direction)
+		bullet.setup(bullet_direction)
 		bullet.position = position
 		$"/root/Main".add_child(bullet)
 
@@ -53,7 +61,9 @@ func movement(command):
 		else:
 			direction.x = 1
 	elif command == "stop":
+		last_direction = direction
 		direction = Vector2(0,0)
 
 func _on_screen_collision():
+	last_direction = direction
 	direction = Vector2(0,0)

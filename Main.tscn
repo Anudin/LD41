@@ -15,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -134,27 +134,25 @@ position = Vector2( 319.598, 436.548 )
 
 [node name="AI" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
-
 [node name="AI" parent="AI" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 753.633, 424.23 )
+position = Vector2( 1139.51, 321.731 )
 
 [node name="AI2" parent="AI" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 706.332, 368.568 )
+position = Vector2( 1197.73, 593.162 )
 
 [node name="AI3" parent="AI" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 822.994, 316.018 )
+position = Vector2( 1232.99, 73.336 )
 
 [node name="AI4" parent="AI" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 841.395, 404.418 )
+position = Vector2( 199.267, 550.63 )
 
 [node name="AI5" parent="AI" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 718.621, 300.061 )
+position = Vector2( 165.427, 122.195 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
