@@ -36,6 +36,8 @@ func _on_text_command(command):
 
 func movement(command):
 	if command == "up":
+		$DebugArrow.rotate(deg2rad(-90) - $DebugArrow.rotation)
+		
 		direction.x = 0
 		
 		if direction.y < 0:
@@ -43,6 +45,8 @@ func movement(command):
 		else:
 			direction.y = -1
 	elif command == "down":
+		$DebugArrow.rotate(deg2rad(90) - $DebugArrow.rotation)
+		
 		direction.x = 0
 		
 		if direction.y > 0:
@@ -50,6 +54,8 @@ func movement(command):
 		else:
 			direction.y = 1
 	elif command == "left":
+		$DebugArrow.rotate(deg2rad(180) - $DebugArrow.rotation)
+		
 		direction.y = 0
 		
 		if direction.x < 0:
@@ -57,6 +63,8 @@ func movement(command):
 		else:
 			direction.x = -1
 	elif command == "right":
+		$DebugArrow.rotate(deg2rad(0) - $DebugArrow.rotation)
+		
 		direction.y = 0
 		
 		if direction.x > 0:

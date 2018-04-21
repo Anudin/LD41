@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/player.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Components/RestrictToScreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/debug_arrow.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4.00501, 5.08431 )
 
-[node name="Player" type="Sprite"]
+[node name="Player" type="Sprite" index="0"]
 
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
@@ -22,6 +23,8 @@ extend = Vector2( 16, 20 )
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
+position = Vector2( 0.462787, 0.142396 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -33,5 +36,14 @@ audio_bus_name = "Master"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 1 )
+
+[node name="DebugArrow" type="Sprite" parent="." index="2"]
+
+position = Vector2( 0.0179672, 0.0113721 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 7.01266, 0.0802631 )
+_sections_unfolded = [ "Transform" ]
 
 
