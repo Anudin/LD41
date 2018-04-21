@@ -60,3 +60,5 @@ func update_temp_commands_display():
 
 	$UI/CommandMapping.text = command_display
 
+func _on_health_changed(health):
+	$UI/PlayerHealth.text = str(health)

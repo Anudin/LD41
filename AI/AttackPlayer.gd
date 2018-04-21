@@ -25,5 +25,8 @@ func _on_animation_finished():
 	Parent.queue_free()
 
 func _on_area_entered(area):
-	cleanup = true
-	Parent.play("explode")
+	if area == Player.get_node("Area2D"):
+		cleanup = true
+		Parent.play("explode")
+		Parent.get_node("Area2D/CollisionShape2D").disabled = true
+		Player._on_hit()

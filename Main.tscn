@@ -15,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -44,10 +44,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 17.0
-margin_top = 9.0
-margin_right = 169.0
-margin_bottom = 58.0
+margin_left = 16.0
+margin_top = 53.0
+margin_right = 185.0
+margin_bottom = 102.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -67,10 +67,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 564.0
-margin_top = 8.0
-margin_right = 716.0
-margin_bottom = 57.0
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 211.0
+margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -79,13 +79,36 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "Command Mapping"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="PlayerHealth" type="Label" parent="UI" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 543.0
+margin_top = 9.0
+margin_right = 738.0
+margin_bottom = 58.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Player Health"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="TextInput" parent="UI" index="2" instance=ExtResource( 3 )]
+[node name="TextInput" parent="UI" index="3" instance=ExtResource( 3 )]
 
 margin_left = 48.0
 margin_top = 630.0
@@ -152,7 +175,7 @@ position = Vector2( 199.267, 550.63 )
 
 [node name="AI5" parent="AI" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 165.427, 122.195 )
+position = Vector2( 165.967, 122.195 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
@@ -161,5 +184,7 @@ position = Vector2( 1061.92, 337.494 )
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 
 [connection signal="text_command" from="UI/TextInput" to="Player" method="_on_text_command"]
+
+[connection signal="health_changed" from="Player" to="." method="_on_health_changed"]
 
 

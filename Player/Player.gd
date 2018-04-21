@@ -1,6 +1,10 @@
 extends Sprite
 
+signal health_changed
+
 var Bullet = preload("res://Player/Bullet.tscn")
+
+var health = 100
 
 var direction = Vector2(0,0)
 var last_direction = Vector2(0,1)
@@ -67,3 +71,7 @@ func movement(command):
 func _on_screen_collision():
 	last_direction = direction
 	direction = Vector2(0,0)
+
+func _on_hit():
+	health -= 25
+	emit_signal("health_changed", health)
