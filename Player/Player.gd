@@ -2,7 +2,7 @@ extends Sprite
 
 var Bullet = preload("res://Player/Bullet.tscn")
 
-var direction = Vector2(0,1)
+var direction = Vector2(0,0)
 var speed = 60
 
 func _ready():

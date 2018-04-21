@@ -15,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -55,7 +55,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Preview."
+text = "Command Queue"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -78,7 +78,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Preview."
+text = "Command Mapping"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
