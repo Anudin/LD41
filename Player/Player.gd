@@ -11,9 +11,7 @@ var last_direction = Vector2(0,1)
 var speed = 60
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	emit_signal("health_changed", health)
 
 func _process(delta):
 	position += direction * speed * delta
