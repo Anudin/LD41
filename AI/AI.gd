@@ -1,4 +1,4 @@
-extends Sprite
+extends AnimatedSprite
 
 # TODO: I might run into problems because I'm scaling a colliders parent
 # TODO: Maybe fix collisions between multiple AIs
@@ -16,7 +16,4 @@ func _process(delta):
 	pass
 
 func _on_screen_collision():
-	pass
-
-func _on_area_entered(area):
 	pass

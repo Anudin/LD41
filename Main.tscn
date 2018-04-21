@@ -156,7 +156,7 @@ position = Vector2( 165.427, 122.195 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 779.663, 357.536 )
+position = Vector2( 1061.92, 337.494 )
 
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 
