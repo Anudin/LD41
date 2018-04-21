@@ -15,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -175,7 +175,7 @@ position = Vector2( 199.267, 550.63 )
 
 [node name="AI5" parent="AI" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 165.967, 122.195 )
+position = Vector2( 220.231, 521.64 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
