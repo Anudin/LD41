@@ -15,4 +15,4 @@ func _ready():
 #	pass
 
 func _on_text_command(command):
-	print("Main received: ", command)
+	pass

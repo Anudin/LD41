@@ -2,14 +2,12 @@ extends Control
 
 signal text_command
 
-const COMMANDS = ["up", "down", "left", "right"]
+const COMMANDS = ["up", "down", "left", "right", "stop"]
 
 const DEFAULT_TEXT = "Type command..."
 
 func _ready():
 	$TextDisplay.text = DEFAULT_TEXT
-	
-	connect("text_command", get_parent(), "_on_text_command")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
