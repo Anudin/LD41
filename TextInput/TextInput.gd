@@ -36,13 +36,16 @@ func keyboard_input(event):
 					command = Main.verify_command(command)
 					
 					if command != null:
-						queue.push_back(command)
-						
-						if queue.size() > 3:
-							queue.pop_front()
-							queue.resize(3)
-						
-						emit_signal("queue_updated", queue)
+						if event.scancode == KEY_SPACE:
+							queue.push_back(command)
+							
+							if queue.size() > 3:
+								queue.pop_front()
+								queue.resize(3)
+							
+							emit_signal("queue_updated", queue)
+						else:
+							emit_signal("text_command", command)
 					else:
 						$AnimationPlayer.play("typo")
 					

@@ -4,11 +4,7 @@ extends Node2D
 # TODO: queue up to 3 actions?
 # TODO: REALLY satisfying shooting mechanic.
 
-# TODO: Delay between queue emissions
-
 # TODO: Fill queue from start / finish / clear it
-# TODO: Difference between space / enter
-# TODO: Allow to execute single commands from queue
 
 const COMMANDS = ["up", "down", "left", "right", "stop"]
 const TEMP_COMMANDS = {"sdf": "shoot"}
