@@ -3,6 +3,8 @@ extends Control
 signal text_command
 
 const COMMANDS = ["up", "down", "left", "right", "stop"]
+const SUBMIT = [KEY_ENTER, KEY_SPACE]
+const DELETE = [KEY_BACKSPACE, KEY_DELETE]
 
 const DEFAULT_TEXT = "Type command..."
 
@@ -29,7 +31,7 @@ func keyboard_input(event):
 			else:
 				$TextDisplay.text += typed_char
 		else:
-			if event.scancode == KEY_ENTER or event.scancode == KEY_SPACE:
+			if SUBMIT.has(event.scancode):
 				var command = $TextDisplay.text.to_lower()
 				
 				if COMMANDS.has(command):
@@ -37,4 +39,6 @@ func keyboard_input(event):
 				else:
 					$AnimationPlayer.play("typo")
 				
+				$TextDisplay.text = DEFAULT_TEXT
+			elif DELETE.has(event.scancode):
 				$TextDisplay.text = DEFAULT_TEXT
