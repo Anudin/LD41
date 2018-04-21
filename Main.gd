@@ -1,10 +1,8 @@
 extends Node2D
 
-# TODO: shooting text gets longer with time / level / difficulty settings
-# TODO: queue up to 3 actions?
-# TODO: REALLY satisfying shooting mechanic.
-
 # TODO: Fill queue from start / finish / clear it
+# TODO: shooting text gets longer with time / level / difficulty settings
+# TODO: REALLY satisfying shooting mechanic.
 
 const COMMANDS = ["up", "down", "left", "right", "stop"]
 const TEMP_COMMANDS = {"sdf": "shoot"}
@@ -61,4 +59,13 @@ func update_temp_commands_display():
 	$UI/CommandMapping.text = command_display
 
 func _on_health_changed(health):
-	$UI/PlayerHealth.text = str(health)
+	if health > 0:
+		$UI/PlayerHealth.text = str(health)
+	else:
+		call_deferred("restart_game")
+		
+func restart_game():
+	var root = $"/root"
+	root.remove_child($"/root/Main")
+	root.add_child(load("res://Main.tscn").instance())
+	queue_free()
