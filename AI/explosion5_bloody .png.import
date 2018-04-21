@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ai.png-e07e3e96d3a80ea9ff819b850901383f.stex"
+path="res://.import/explosion5_bloody .png-a8621fd253ee134bab7b9e46d9ea3f2b.stex"
 
 [deps]
 
-source_file="res://AI/ai.png"
-source_md5="7e2e126946354dd16344bf34d0c4b008"
+source_file="res://AI/explosion5_bloody .png"
+source_md5="7608fb82f40bb7325c2f9caff2a634bd"
 
-dest_files=[ "res://.import/ai.png-e07e3e96d3a80ea9ff819b850901383f.stex" ]
-dest_md5="690b985e4298c9bad8f43f1db0c79a27"
+dest_files=[ "res://.import/explosion5_bloody .png-a8621fd253ee134bab7b9e46d9ea3f2b.stex" ]
+dest_md5="b0952ec9820fed382ef22d7eff1842c4"
 
 [params]
 

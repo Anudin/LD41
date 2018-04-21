@@ -1,7 +1,7 @@
 extends Sprite
 
 var direction = Vector2(0,0)
-var speed = 240
+var speed = 600
 
 func _ready():
 	# Called every time the node is added to the scene.

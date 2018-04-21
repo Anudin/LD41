@@ -28,12 +28,15 @@ func _process(delta):
 	Parent.position += (Player.position - Parent.position).normalized() * speed * delta * modifiers
 
 func _on_animation_finished():
-	Parent.queue_free()
+	pass#Parent.queue_free()
 
 func _on_area_entered(area):
 	cleanup = true
-	Parent.play("explode")
+	Parent.get_node("Shadow").hide()
+	Parent.get_node("AnimationPlayer").stop()
 	Parent.get_node("Area2D/CollisionShape2D").disabled = true
+	Parent.rotate(deg2rad(randi()%135-90))
+	Parent.play("explode")
 	
 	if area == Player.get_node("Area2D"):
 		Player._on_hit()

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spawn_open2.png-e01af47a050a4371d664ec77ba59fade.stex"
+path="res://.import/rocket.png-aa10607bf42323a33b1943e4779fc4b3.stex"
 
 [deps]
 
-source_file="res://Spawns/spawn_open2.png"
-source_md5="af55dba6f64e9d66799dd7d3f1041c18"
+source_file="res://Player/rocket.png"
+source_md5="739c9b36151b50fde2bf8d3d4584a37e"
 
-dest_files=[ "res://.import/spawn_open2.png-e01af47a050a4371d664ec77ba59fade.stex" ]
-dest_md5="4000ce514d6afbf9d13a835cd0074e2d"
+dest_files=[ "res://.import/rocket.png-aa10607bf42323a33b1943e4779fc4b3.stex" ]
+dest_md5="914bb06cb83ac9fa474080b12320b588"
 
 [params]
 

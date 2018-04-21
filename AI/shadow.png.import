@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spawn_open2.png-e01af47a050a4371d664ec77ba59fade.stex"
+path="res://.import/shadow.png-feb59cb437c7ae1d840ceeaf803fb2eb.stex"
 
 [deps]
 
-source_file="res://Spawns/spawn_open2.png"
-source_md5="af55dba6f64e9d66799dd7d3f1041c18"
+source_file="res://AI/shadow.png"
+source_md5="20ef1d52e5a6ec83dccfc67168063f5e"
 
-dest_files=[ "res://.import/spawn_open2.png-e01af47a050a4371d664ec77ba59fade.stex" ]
-dest_md5="4000ce514d6afbf9d13a835cd0074e2d"
+dest_files=[ "res://.import/shadow.png-feb59cb437c7ae1d840ceeaf803fb2eb.stex" ]
+dest_md5="0a7bde8497775ca9554c9ff071bcd750"
 
 [params]
 

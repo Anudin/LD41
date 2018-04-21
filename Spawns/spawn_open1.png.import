@@ -7,10 +7,10 @@ path="res://.import/spawn_open1.png-d2c3405a19f902393d694fc289979ac7.stex"
 [deps]
 
 source_file="res://Spawns/spawn_open1.png"
-source_md5="1a0eb9f8015ecfea2a40b88c74a6e050"
+source_md5="9ad60bf640be72d6d385f44a73c41d35"
 
 dest_files=[ "res://.import/spawn_open1.png-d2c3405a19f902393d694fc289979ac7.stex" ]
-dest_md5="8c3c75d02440f42202ca8695bb515e96"
+dest_md5="537975f0b01b0fc87a6840c9abd48212"
 
 [params]
 
