@@ -52,6 +52,10 @@ func keyboard_input(event):
 					submit_queue()
 			elif DELETE.has(event.scancode):
 				$TextDisplay.text = DEFAULT_TEXT
+			elif event.scancode == KEY_ESCAPE:
+				queue.clear()
+				$TextDisplay.text = DEFAULT_TEXT
+				emit_signal("queue_updated", queue)
 
 func submit_queue():
 	for command in queue:

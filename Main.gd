@@ -7,6 +7,8 @@ extends Node2D
 # TODO: Delay between queue emissions
 # TODO: Difference between space / enter
 
+# TODO: Fill queue from start / finish / clear it
+
 const COMMANDS = ["up", "down", "left", "right", "stop"]
 const TEMP_COMMANDS = {"sdf": "shoot"}
 
