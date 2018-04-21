@@ -1,6 +1,7 @@
 extends Node2D
 
 # TODO: Fill queue from start / finish / clear it
+
 # TODO: shooting text gets longer with time / level / difficulty settings
 # TODO: REALLY satisfying shooting mechanic.
 

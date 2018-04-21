@@ -28,4 +28,6 @@ func _on_area_entered(area):
 	cleanup = true
 	Parent.play("explode")
 	Parent.get_node("Area2D/CollisionShape2D").disabled = true
-	Player._on_hit()
+	
+	if area == Player.get_node("Area2D"):
+		Player._on_hit()
