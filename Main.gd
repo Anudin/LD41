@@ -1,7 +1,5 @@
 extends Node2D
 
-# Should it be possible to revert an typo with backspace?
-
 const COMMANDS = ["up", "down", "left", "right", "stop"]
 const TEMP_COMMANDS = {"sdf": "jump", "isd": "pick up"}
 
@@ -40,7 +38,7 @@ func update_temp_commands(action_code):
 func update_temp_commands_display():
 	var command_display = ""
 	
-	# Keep order
+	# TODO: Keep order
 	for key in TEMP_COMMANDS.keys():
 		command_display += TEMP_COMMANDS[key] + ": " + key + "\n"
 

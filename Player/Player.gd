@@ -11,14 +11,35 @@ func _ready():
 func _process(delta):
 	position += direction * speed * delta
 
+# TODO: Refactor
 func _on_text_command(command):
 	if command == "up":
-		direction = Vector2(0,-1)
+		direction.x = 0
+		
+		if direction.y < 0:
+			direction.y += -1
+		else:
+			direction.y = -1
 	elif command == "down":
-		direction = Vector2(0,1)
+		direction.x = 0
+		
+		if direction.y > 0:
+			direction.y += 1
+		else:
+			direction.y = 1
 	elif command == "left":
-		direction = Vector2(-1,0)
+		direction.y = 0
+		
+		if direction.x < 0:
+			direction.x += -1
+		else:
+			direction.x = -1
 	elif command == "right":
-		direction = Vector2(1,0)
+		direction.y = 0
+		
+		if direction.x > 0:
+			direction.x += 1
+		else:
+			direction.x = 1
 	elif command == "stop":
 		direction = Vector2(0,0)
