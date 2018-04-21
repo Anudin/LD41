@@ -48,7 +48,9 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 0 ) ]
 }
 
-[node name="AI" type="AnimatedSprite"]
+[node name="AI" type="AnimatedSprite" groups=[
+"enemies",
+]]
 
 scale = Vector2( 4, 4 )
 frames = SubResource( 3 )

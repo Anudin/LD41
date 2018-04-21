@@ -14,10 +14,10 @@ func _ready():
 	_on_queue_updated([])
 	update_temp_commands_display()
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	if get_tree().get_nodes_in_group("enemies").size() == 0:
+		print("You're a winner!")
+		call_deferred("restart_game")
 
 func verify_command(command):
 	if COMMANDS.has(command):
