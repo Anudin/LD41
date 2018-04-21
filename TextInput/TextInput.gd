@@ -2,19 +2,14 @@ extends Control
 
 signal text_command
 
-const COMMANDS = ["up", "down", "left", "right", "stop"]
+onready var Main = get_node("/root/Main")
+
 const SUBMIT = [KEY_ENTER, KEY_SPACE]
 const DELETE = [KEY_BACKSPACE, KEY_DELETE]
-
 const DEFAULT_TEXT = "Type command..."
 
 func _ready():
 	$TextDisplay.text = DEFAULT_TEXT
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 
 func _input(event):
 	if event is InputEventKey:
@@ -34,7 +29,7 @@ func keyboard_input(event):
 			if SUBMIT.has(event.scancode):
 				var command = $TextDisplay.text.to_lower()
 				
-				if COMMANDS.has(command):
+				if Main.verify_command(command):
 					emit_signal("text_command", command)
 				else:
 					$AnimationPlayer.play("typo")

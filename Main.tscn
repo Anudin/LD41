@@ -1,64 +1,98 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
-[ext_resource path="res://TextInput/TextInput.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://TextInput/TextInput.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
-[node name="TextInput" parent="." index="0" instance=ExtResource( 2 )]
+[node name="CommandMapping" type="Label" parent="." index="0"]
 
-margin_left = 50.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 40.0
+margin_right = 162.0
+margin_bottom = 89.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Preview."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="TextInput" parent="." index="1" instance=ExtResource( 3 )]
+
+margin_left = 48.0
 margin_top = 627.0
-margin_right = 50.0
+margin_right = 48.0
 margin_bottom = 627.0
 
-[node name="Forest" type="Node2D" parent="." index="1"]
+[node name="Forest" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
+[node name="Tree" parent="Forest" index="0" instance=ExtResource( 4 )]
 
-[node name="Tree" parent="Forest" index="0" instance=ExtResource( 3 )]
+position = Vector2( 309.778, 258.723 )
 
-position = Vector2( 139.372, 156.48 )
+[node name="Tree2" parent="Forest" index="1" instance=ExtResource( 4 )]
 
-[node name="Tree2" parent="Forest" index="1" instance=ExtResource( 3 )]
+position = Vector2( 408.428, 342.166 )
 
-position = Vector2( 294.824, 249.011 )
+[node name="Tree3" parent="Forest" index="2" instance=ExtResource( 4 )]
 
-[node name="Tree3" parent="Forest" index="2" instance=ExtResource( 3 )]
+position = Vector2( 692.232, 149.151 )
 
-position = Vector2( 614.981, 178.688 )
+[node name="Tree4" parent="Forest" index="3" instance=ExtResource( 4 )]
 
-[node name="Tree4" parent="Forest" index="3" instance=ExtResource( 3 )]
+position = Vector2( 589.696, 402.778 )
 
-position = Vector2( 496.541, 411.866 )
+[node name="Tree5" parent="Forest" index="4" instance=ExtResource( 4 )]
 
-[node name="Tree5" parent="Forest" index="4" instance=ExtResource( 3 )]
+position = Vector2( 1158.59, 176.91 )
 
-position = Vector2( 1081.34, 206.447 )
+[node name="Tree6" parent="Forest" index="5" instance=ExtResource( 4 )]
 
-[node name="Tree6" parent="Forest" index="5" instance=ExtResource( 3 )]
+position = Vector2( 819.924, 200.968 )
 
-position = Vector2( 742.673, 230.505 )
+[node name="Tree7" parent="Forest" index="6" instance=ExtResource( 4 )]
 
-[node name="Tree7" parent="Forest" index="6" instance=ExtResource( 3 )]
+position = Vector2( 1137.47, 528.62 )
 
-position = Vector2( 1044.32, 537.708 )
+[node name="Tree8" parent="Forest" index="7" instance=ExtResource( 4 )]
 
-[node name="Tree8" parent="Forest" index="7" instance=ExtResource( 3 )]
+position = Vector2( 830.276, 589.69 )
 
-position = Vector2( 737.121, 598.778 )
+[node name="Tree9" parent="Forest" index="8" instance=ExtResource( 4 )]
 
-[node name="Tree9" parent="Forest" index="8" instance=ExtResource( 3 )]
+position = Vector2( 319.598, 436.548 )
 
-position = Vector2( 205.994, 343.393 )
+[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
 
-[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
-
-position = Vector2( 686.508, 366.624 )
+position = Vector2( 779.663, 357.536 )
 
 [connection signal="text_command" from="TextInput" to="Player" method="_on_text_command"]
 

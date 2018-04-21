@@ -2,16 +2,46 @@ extends Node2D
 
 # Should it be possible to revert an typo with backspace?
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const COMMANDS = ["up", "down", "left", "right", "stop"]
+const TEMP_COMMANDS = {"sdf": "jump", "isd": "pick up"}
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	randomize()
+	
+	update_temp_commands_display()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+func verify_command(command):
+	if COMMANDS.has(command):
+		return true
+	elif TEMP_COMMANDS.has(command):
+		var action = TEMP_COMMANDS[command]
+		update_temp_commands(command)
+		return action
+
+func update_temp_commands(action_code):
+	var action = TEMP_COMMANDS[action_code]
+	TEMP_COMMANDS.erase(action_code)
+	
+	var key = ""
+	
+	while(key == "" or TEMP_COMMANDS.has(key)):
+		for i in range(3):
+			key += char(randi()%26 + "a".ord_at(0))
+			
+	TEMP_COMMANDS[key] = action
+	
+	update_temp_commands_display()
+
+func update_temp_commands_display():
+	var command_display = ""
+	
+	# Keep order
+	for key in TEMP_COMMANDS.keys():
+		command_display += TEMP_COMMANDS[key] + ": " + key + "\n"
+
+	$CommandMapping.text = command_display
