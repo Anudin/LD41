@@ -3,6 +3,8 @@ extends Node
 onready var Parent = get_parent()
 onready var Player = $"/root/Main/Player"
 
+const SLOWMOTION_FACTOR = 0.3
+
 var last_position = Vector2(0,0)
 var speed = 30
 
@@ -18,8 +20,12 @@ func _process(delta):
 		return
 	
 	var angle_to_player = rad2deg(Parent.get_angle_to(Player.position))
+	var modifiers = 1
 	
-	Parent.position += (Player.position - Parent.position).normalized() * speed * delta
+	if Player.direction == Vector2(0,0):
+		modifiers *= SLOWMOTION_FACTOR
+	
+	Parent.position += (Player.position - Parent.position).normalized() * speed * delta * modifiers
 
 func _on_animation_finished():
 	Parent.queue_free()
