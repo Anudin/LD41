@@ -5,21 +5,19 @@ extends Sprite
 
 # TODO: slow down / relax depending on distance
 # TODO: dodge walls
+# TODO (maybe): relaxed state + random walk.
 
 onready var Player = $"/root/Main/Player"
 
 var last_position = Vector2(0,0)
-var speed = 30
+var speed = 60
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
 
-func _process(delta):
-	last_position = Vector2(position.x,position.y)
-	#print("last position ",last_position)
-	
+func _process(delta):	
 	var angle_to_player = rad2deg(get_angle_to(Player.position))
 	
 	if angle_to_player >= -45 and angle_to_player <= 45:
@@ -30,12 +28,9 @@ func _process(delta):
 		position.y -= speed * delta
 	elif angle_to_player <= -45 and angle_to_player >= -135:
 		position.y += speed * delta
-	
-	#print("position ",position)
 
 func _on_screen_collision():
 	pass
 
 func _on_area_entered(area):
-	pass#print(position,last_position)
-	#position = Vector2(last_position.x,last_position.y)
+	pass

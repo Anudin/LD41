@@ -1,11 +1,16 @@
 extends Node2D
 
+# TODO: shooting text gets longer with time / level / difficulty settings
+# TODO: queue up to 3 actions?
+# TODO: REALLY satisfying shooting mechanic.
+
 const COMMANDS = ["up", "down", "left", "right", "stop"]
-const TEMP_COMMANDS = {"sdf": "jump", "isd": "pick up"}
+const TEMP_COMMANDS = {"sdf": "shoot"}
 
 func _ready():
 	randomize()
 	
+	_on_queue_released()
 	update_temp_commands_display()
 
 #func _process(delta):
@@ -15,11 +20,20 @@ func _ready():
 
 func verify_command(command):
 	if COMMANDS.has(command):
-		return true
+		return command
 	elif TEMP_COMMANDS.has(command):
 		var action = TEMP_COMMANDS[command]
 		update_temp_commands(command)
 		return action
+
+func _on_queue_updated(queue):
+	$UI/CommandQueue.text = ""
+	
+	for command in queue:
+		$UI/CommandQueue.text += command + "\n"
+
+func _on_queue_released():
+	$UI/CommandQueue.text = "..."
 
 func update_temp_commands(action_code):
 	var action = TEMP_COMMANDS[action_code]
@@ -43,3 +57,4 @@ func update_temp_commands_display():
 		command_display += TEMP_COMMANDS[key] + ": " + key + "\n"
 
 	$UI/CommandMapping.text = command_display
+

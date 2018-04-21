@@ -15,17 +15,16 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 16.4936, 670.276 ],
-"_edit_vertical_guides_": [ 16.8801, 50.1625 ]
+"_edit_vertical_guides_": [ 16.8801, 50.1625, 639.977 ]
 }
 
 [node name="UI" type="Control" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -39,16 +38,16 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="CommandMapping" type="Label" parent="UI" index="0"]
+[node name="CommandQueue" type="Label" parent="UI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 16.0
-margin_top = 9.0
-margin_right = 168.0
-margin_bottom = 58.0
+margin_left = 49.0
+margin_top = 8.0
+margin_right = 201.0
+margin_bottom = 57.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -62,7 +61,31 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="TextInput" parent="UI" index="1" instance=ExtResource( 3 )]
+[node name="CommandMapping" type="Label" parent="UI" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 564.0
+margin_top = 8.0
+margin_right = 716.0
+margin_bottom = 57.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Preview."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="TextInput" parent="UI" index="2" instance=ExtResource( 3 )]
 
 margin_left = 48.0
 margin_top = 630.0
@@ -113,23 +136,31 @@ position = Vector2( 319.598, 436.548 )
 
 [node name="AI" parent="AI" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 754.861, 639.084 )
+position = Vector2( 753.633, 424.23 )
 
 [node name="AI2" parent="AI" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 757.897, 685.324 )
+position = Vector2( 706.332, 368.568 )
 
-[node name="AI3" parent="AI" index="2" instance_placeholder="res://AI/AI.tscn"]
+[node name="AI3" parent="AI" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 1170.44, 230.076 )
+position = Vector2( 822.994, 316.018 )
 
-[node name="AI4" parent="AI" index="3" instance_placeholder="res://AI/AI.tscn"]
+[node name="AI4" parent="AI" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 985.041, 534.559 )
+position = Vector2( 841.395, 404.418 )
+
+[node name="AI5" parent="AI" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 718.621, 300.061 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 779.663, 357.536 )
+
+[connection signal="queue_released" from="UI/TextInput" to="." method="_on_queue_released"]
+
+[connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 
 [connection signal="text_command" from="UI/TextInput" to="Player" method="_on_text_command"]
 
