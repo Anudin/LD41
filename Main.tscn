@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://TextInput/TextInput.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=4]
-[ext_resource path="res://AI/AI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -25,6 +25,7 @@ __meta__ = {
 
 [node name="UI" type="Control" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -155,31 +156,15 @@ position = Vector2( 830.276, 589.69 )
 
 position = Vector2( 319.598, 436.548 )
 
+[node name="Spawn" parent="Level" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 108.562, 140.296 )
+
+[node name="Spawn2" parent="Level" index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 113.573, 572.874 )
+
 [node name="AI" type="Node2D" parent="." index="2"]
-
-[node name="AI3" parent="AI" index="0" instance=ExtResource( 5 )]
-
-position = Vector2( 104.559, 74.7488 )
-
-[node name="AI5" parent="AI" index="1" instance=ExtResource( 5 )]
-
-position = Vector2( 104.924, 154.703 )
-
-[node name="AI6" parent="AI" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 183.381, 78.0846 )
-
-[node name="AI4" parent="AI" index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 106.834, 615.164 )
-
-[node name="AI7" parent="AI" index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 114.236, 524.483 )
-
-[node name="AI8" parent="AI" index="5" instance=ExtResource( 5 )]
-
-position = Vector2( 206.768, 611.463 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
