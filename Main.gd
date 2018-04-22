@@ -15,7 +15,7 @@ func _ready():
 	randomize()
 	
 	_on_queue_updated([])
-	update_temp_commands_display()
+	update_temp_commands("sdf")
 
 func _process(delta):
 	pass
@@ -44,7 +44,7 @@ func update_temp_commands(action_code):
 	var key = ""
 	
 	while(key == "" or TEMP_COMMANDS.has(key)):
-		for i in range(3):
+		for i in range($Level.LAUNCH_CODE_LENGTH):
 			key += char(randi()%26 + "a".ord_at(0))
 			
 	TEMP_COMMANDS[key] = action

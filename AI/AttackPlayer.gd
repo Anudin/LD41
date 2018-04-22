@@ -3,8 +3,6 @@ extends Node
 onready var Player = $"/root/Main/Player"
 onready var Parent = get_parent()
 
-const SLOWMOTION_FACTOR = 0.3
-
 var last_position = Vector2(0,0)
 var speed = 30
 
@@ -16,7 +14,7 @@ func _process(delta):
 	var modifiers = 1
 	
 	if Player.velocity == Vector2(0,0):
-		modifiers *= SLOWMOTION_FACTOR
+		modifiers *= $"/root/Main/Level".SLOWMOTION_MODIFIER
 	
 	Parent.position += (Player.position - Parent.position).normalized() * speed * delta * modifiers
 
