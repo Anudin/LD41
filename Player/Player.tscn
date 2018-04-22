@@ -49,13 +49,17 @@ shape = SubResource( 2 )
 
 [node name="right_marker" type="Sprite" parent="." index="1"]
 
+modulate = Color( 0.847656, 0.205292, 0.205292, 1 )
 position = Vector2( -5.0389, 9.92342 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="left_marker" type="Sprite" parent="." index="2"]
 
+modulate = Color( 0.847059, 0.203922, 0.203922, 1 )
 position = Vector2( 5.20377, 9.93085 )
 texture = ExtResource( 5 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
@@ -81,7 +85,7 @@ drag_margin_bottom = 0.25
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin" ]
+_sections_unfolded = [ "Drag Margin", "Visibility" ]
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_shape_entered"]
 
