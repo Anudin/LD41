@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/player0.png" type="Texture" id=1]
 [ext_resource path="res://Player/player1.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Components/RestrictToScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/debug_arrow.png" type="Texture" id=5]
+[ext_resource path="res://Player/right_marker.png" type="Texture" id=6]
+[ext_resource path="res://Player/left_marker.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -20,7 +22,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 4.02826, 7.48546 )
 
-[node name="Player" type="AnimatedSprite"]
+[node name="Player" type="AnimatedSprite" index="0"]
 
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
@@ -35,7 +37,7 @@ extend = Vector2( 16, 20 )
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
-position = Vector2( 0.0269356, 0.771958 )
+position = Vector2( 0.0863914, 0.712502 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -58,5 +60,15 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 offset = Vector2( 7.01266, 0.0802631 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="right_marker" type="Sprite" parent="." index="3"]
+
+position = Vector2( -5.0389, 9.92342 )
+texture = ExtResource( 6 )
+
+[node name="left_marker" type="Sprite" parent="." index="4"]
+
+position = Vector2( 5.20377, 9.93085 )
+texture = ExtResource( 7 )
 
 

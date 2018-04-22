@@ -44,6 +44,9 @@ func movement(command):
 		play("default")
 	else:
 		stop()
+	
+	$right_marker.global_rotation = 0
+	$left_marker.global_rotation = 0
 
 func _on_screen_collision():
 	pass
