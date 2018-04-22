@@ -3,12 +3,11 @@ extends Node2D
 # Quirks: Can't rename folder (in use?)
 
 # Must be done today! (at least)
-# -> Refactor player hehaviour
 # -> Add state machine to level system (transitions etc.)
 
 # TODO: Tutorial
 # TODO: Safestate
-# TODO: Sound [Warn sound]
+# TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Main menu - New Game, Continue, Controls maybe difficulty setting
 # TODO: Particles - trails!, blood, smoke etc.
 

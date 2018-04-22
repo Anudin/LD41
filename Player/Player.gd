@@ -25,30 +25,13 @@ func _process(delta):
 		stop()
 
 func _on_text_command(command):
-	#print("Player received: " + command)
-	
-	movement(command)
-	
 	if command == "shoot":				
 		var bullet = Bullet.instance()
 		bullet.setup(direction)
 		bullet.position = position
 		$"/root/Main/Bullets".add_child(bullet)
-
-func movement(command):
-	if command == "left":
-		rotate(deg2rad(-90))
-		direction = direction.rotated(deg2rad(-90))
-		velocity = direction * SPEED_MODIFIER
-	elif command == "right":
-		rotate(deg2rad(90))
-		direction = direction.rotated(deg2rad(90))
-		velocity = direction * SPEED_MODIFIER
-	elif command == "go":
-		velocity += direction * SPEED_MODIFIER
-	elif command == "stop":
-		velocity = Vector2(0,0)
 	
+	# Rotate labels so they face upside in case the player was moved
 	$RightMarker.global_rotation = 0
 	$LeftMarker.global_rotation = 0
 

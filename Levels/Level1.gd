@@ -1,11 +1,11 @@
 extends "res://Levels/Level.gd"
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var RelativeMovement = preload("res://Player/RelativeMovement.tscn")
 
 func _ready():
 	._ready()
+	
+	$"/root/Main/Player".add_child(RelativeMovement.instance())
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
