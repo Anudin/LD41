@@ -5,6 +5,7 @@ extends Node2D
 # -> Refactor player hehaviour
 # -> Add state machine to level system (transitions etc.)
 
+# TODO: Health Bar
 # TODO: Tutorial
 # TODO: Sound [Warn sound]
 # TODO: Particles - trails!, blood, smoke etc.

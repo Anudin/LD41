@@ -9,6 +9,9 @@ func before():
 
 func _ready():
 	set_process(false)
+	
+	$"/root/Main/Player/LeftMarker".visible = SHOW_DIR_HINT
+	$"/root/Main/Player/RightMarker".visible = SHOW_DIR_HINT
 
 func after():
 	pass

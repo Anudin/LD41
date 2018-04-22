@@ -7,10 +7,10 @@ path="res://.import/wall.png-cdc7509adbc6a573d783e8f227f16969.stex"
 [deps]
 
 source_file="res://environment/wall.png"
-source_md5="7cc9bf9e2895cf1c4235b282e88b96ad"
+source_md5="5d7ea45fb9d761e8867e2998ff04ee6a"
 
 dest_files=[ "res://.import/wall.png-cdc7509adbc6a573d783e8f227f16969.stex" ]
-dest_md5="8cb8411082e71a5879ae712a9dd68a7a"
+dest_md5="72b325a501fea8202e1a396f3e6fb194"
 
 [params]
 
