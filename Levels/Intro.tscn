@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/Intro.gd" type="Script" id=1]
+[ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
+[ext_resource path="res://environment/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+LAUNCH_CODE_LENGTH = 3
+SLOWMOTION_MODIFIER = 0.3
+SHOW_DIR_HINT = false
+Movement = ExtResource( 2 )
+FOLLOWING_SCENE_PATH = "res://Levels/Level1.tscn"
+
+[node name="Goal" parent="." index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 1219.85, 549.328 )
+
+[node name="Obstacles" parent="." index="1" instance=ExtResource( 4 )]
+
+[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 1159.48, 599.236 )
+rotation = 0.785398
+width = 360
+
+[node name="Wall6" parent="Obstacles" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 1157.01, 356.713 )
+width = 270
+
+[node name="Wall8" parent="Obstacles" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 950, 412.521 )
+rotation = 1.5708
+width = 145
+
+[node name="Wall7" parent="Obstacles" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 990, 480.315 )
+width = 120
+
+[node name="PlayerSpawn" parent="." index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 185.586, 360 )
+
+[node name="Tree" parent="." index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 355.468, 307.769 )
+
+[node name="Tree2" parent="." index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 594.036, 171.445 )
+
+[node name="Tree3" parent="." index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 262.313, 555.425 )
+
+[node name="Tree4" parent="." index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 146.438, 153.268 )
+
+[node name="Tree5" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 537.234, 462.27 )
+
+[node name="Tree6" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 748.537, 482.718 )
+
+[connection signal="player_arrived" from="Goal" to="." method="set" binds= [ "arrived", true ]]
+
+

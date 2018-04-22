@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/Wall.gd" type="Script" id=2]
+
+[node name="Obstacles" type="Node2D"]
+
+[node name="Wall" type="Area2D" parent="." index="0" groups=[
+"walls",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 640, -16 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 5
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+width = 1280
+height = 32
+
+[node name="Wall2" type="Area2D" parent="." index="1" groups=[
+"walls",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 640, 736 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 5
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+width = 1280
+height = 32
+
+[node name="Wall3" type="Area2D" parent="." index="2" groups=[
+"walls",
+] instance=ExtResource( 1 )]
+
+position = Vector2( -16, 360 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 5
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+width = 32
+height = 790
+
+[node name="Wall4" type="Area2D" parent="." index="3" groups=[
+"walls",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 1296, 360 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 5
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+width = 32
+height = 790
+
+

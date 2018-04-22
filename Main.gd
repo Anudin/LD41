@@ -3,24 +3,22 @@ extends Node2D
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 
-# TODO: Implement progression -> Write level texts
-
-# TODO: Sound [Warn sound, shot, explosion, typing, moving?]
+# TODO: Plan, implement progression
 # TODO: Main, Pause (show tutorial), death... menu - New Game, Continue, Controls maybe difficulty setting
 
+# TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, blood, smoke etc.
 
-# If time I may add the walk sim joke at the beginning. Shouldn't take long.
-
 var COMMANDS = []
-const TEMP_COMMANDS = {"sdf": "shoot"}
+const TEMP_COMMANDS = {"whatever": "shoot"}
 
 var level_path
 
 func _ready():
 	randomize()
 	
-	load_game()
+	change_level("res://Levels/Intro.tscn")
+	#load_game()
 	_on_queue_updated([])
 	update_temp_commands(TEMP_COMMANDS.keys()[0])
 

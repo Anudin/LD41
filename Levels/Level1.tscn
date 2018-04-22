@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=5]
 
@@ -13,30 +13,9 @@ LAUNCH_CODE_LENGTH = 3
 SLOWMOTION_MODIFIER = 0.3
 SHOW_DIR_HINT = false
 Movement = ExtResource( 2 )
+FOLLOWING_SCENE_PATH = "res://Levels/Level2.tscn"
 
-[node name="Obstacles" type="Node2D" parent="." index="0"]
-
-editor/display_folded = true
-
-[node name="Wall" parent="Obstacles" index="0" instance=ExtResource( 3 )]
-
-position = Vector2( 640, -16 )
-width = 1280
-
-[node name="Wall2" parent="Obstacles" index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 640, 736 )
-width = 1280
-
-[node name="Wall3" parent="Obstacles" index="2" instance=ExtResource( 3 )]
-
-position = Vector2( -16, 360 )
-height = 790
-
-[node name="Wall4" parent="Obstacles" index="3" instance=ExtResource( 3 )]
-
-position = Vector2( 1296, 360 )
-height = 790
+[node name="Obstacles" parent="." index="0" instance=ExtResource( 3 )]
 
 [node name="Spawns" type="Node2D" parent="." index="1"]
 

@@ -6,6 +6,7 @@ export var LAUNCH_CODE_LENGTH = 3
 export var SLOWMOTION_MODIFIER = 0.3
 export var SHOW_DIR_HINT = false
 export(PackedScene) var Movement
+export(String) var FOLLOWING_SCENE_PATH
 
 # Implement in each script
 func win_condition():
@@ -34,4 +35,4 @@ func after():
 func _process(delta):
 	if win_condition():
 		set_process(false)
-		emit_signal("level_finished", "res://Levels/Level2.tscn")
+		emit_signal("level_finished", FOLLOWING_SCENE_PATH)
