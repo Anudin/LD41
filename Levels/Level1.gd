@@ -1,9 +1,10 @@
 extends "res://Levels/Level.gd"
 
+func win_condition():
+	return get_tree().get_nodes_in_group("enemy_spawn").size() == 0
+
 func _ready():
 	._ready()
 
 #func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+#	print(win_condition())

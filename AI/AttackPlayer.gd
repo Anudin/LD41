@@ -14,7 +14,7 @@ func _process(delta):
 	var modifiers = 1
 	
 	if Player.velocity == Vector2(0,0):
-		modifiers *= $"/root/Main/Level".SLOWMOTION_MODIFIER
+		modifiers *= $"/root/Main/Level/Level".SLOWMOTION_MODIFIER
 	
 	Parent.position += (Player.position - Parent.position).normalized() * speed * delta * modifiers
 

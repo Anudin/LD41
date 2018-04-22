@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://TextInput/TextInput.tscn" type="PackedScene" id=3]
 [ext_resource path="res://UI/healthbar_bg.png" type="Texture" id=4]
 [ext_resource path="res://UI/healthbar_fg.png" type="Texture" id=5]
-[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -16,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -27,6 +26,7 @@ __meta__ = {
 
 [node name="UI" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -119,13 +119,11 @@ radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Level" parent="." index="1" instance=ExtResource( 6 )]
+[node name="Level" type="Node2D" parent="." index="1"]
 
 [node name="Bullets" type="Node2D" parent="." index="2"]
 
-[node name="AI" type="Node2D" parent="." index="3"]
-
-[node name="Player" parent="." index="4" instance=ExtResource( 7 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 618.897, 180.627 )
 

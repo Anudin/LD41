@@ -2,14 +2,14 @@ extends Node2D
 
 # Quirks: Can't rename folder (in use?)
 
-# Must be done today! (at least)
-# -> Add state machine to level system (transitions etc.)
-
 # TODO: Tutorial
 # TODO: Safestate
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
-# TODO: Main menu - New Game, Continue, Controls maybe difficulty setting
+# TODO: Main, Pause, death... menu - New Game, Continue, Controls maybe difficulty setting
 # TODO: Particles - trails!, blood, smoke etc.
+
+# Maybe fix:
+# -> ready gets called twice?!
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"sdf": "shoot"}
@@ -17,6 +17,7 @@ const TEMP_COMMANDS = {"sdf": "shoot"}
 func _ready():
 	randomize()
 	
+	change_level("res://Levels/Level1.tscn")
 	_on_queue_updated([])
 	update_temp_commands(TEMP_COMMANDS.keys()[0])
 
@@ -47,7 +48,7 @@ func update_temp_commands(action_code):
 	var key = ""
 	
 	while(key == "" or TEMP_COMMANDS.has(key)):
-		for i in range($Level.LAUNCH_CODE_LENGTH):
+		for i in range($Level/Level.LAUNCH_CODE_LENGTH):
 			key += char(randi()%26 + "a".ord_at(0))
 			
 	TEMP_COMMANDS[key] = action
@@ -73,3 +74,14 @@ func restart_game():
 	root.remove_child($"/root/Main")
 	root.add_child(load("res://Main.tscn").instance())
 	queue_free()
+
+func change_level(path):
+	var level = load(path).instance()
+	
+	if not has_node("Level/Level"):
+		level.before()
+		$Level.add_child(level)
+	else:
+		$Level/Level.after()
+		level.before()
+		$Level/Level.replace_by(level)

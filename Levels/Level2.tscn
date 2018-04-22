@@ -44,12 +44,15 @@ editor/display_folded = true
 
 [node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 623.073, 568.347 )
-MAX = 0
+position = Vector2( 1063.64, 553.242 )
+
+[node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 701.117, 178.129 )
 
 [node name="PlayerSpawn" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 626.321, 282.261 )
+position = Vector2( 1075.6, 177.039 )
 
 [node name="AI" type="Node2D" parent="." index="3"]
 

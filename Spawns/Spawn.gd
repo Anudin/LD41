@@ -18,12 +18,13 @@ func _ready():
 
 func _on_timeout():
 	if spawned >= MAX:
+		$Timer.stop()
 		return
 	
 	play("open")
 	var spawn = AI.instance()
 	spawn.position = position
-	$"/root/Main/AI".add_child(spawn)
+	$"../../AI".add_child(spawn)
 	
 	spawned += 1
 
@@ -37,3 +38,6 @@ func _on_area_entered(area):
 func _on_animation_finished():
 	if not destroyed:
 		play("default")
+	else:
+		queue_free()
+		get_parent().remove_child(self)
