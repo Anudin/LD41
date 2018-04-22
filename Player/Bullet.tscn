@@ -25,7 +25,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 4
-collision_mask = 2
+collision_mask = 10
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -41,7 +41,7 @@ position = Vector2( 0.0374146, -0.00497139 )
 scale = Vector2( 0.0723362, 0.0742961 )
 rect = Rect2( -2, -2, 4, 4 )
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_shape_entered"]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited"]
 

@@ -35,7 +35,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 4.29355, 5.30812 )
 
-[node name="Spawn" type="AnimatedSprite" index="0"]
+[node name="Spawn" type="AnimatedSprite"]
 
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )

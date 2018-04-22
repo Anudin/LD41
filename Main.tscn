@@ -167,11 +167,7 @@ position = Vector2( 319.598, 436.548 )
 
 [node name="Spawn" parent="Level" index="9" instance=ExtResource( 5 )]
 
-position = Vector2( 112.245, 139.068 )
-
-[node name="Spawn2" parent="Level" index="10" instance=ExtResource( 5 )]
-
-position = Vector2( 113.573, 572.874 )
+position = Vector2( 638.946, 615.432 )
 
 [node name="Bullets" type="Node2D" parent="." index="2"]
 
@@ -179,7 +175,7 @@ position = Vector2( 113.573, 572.874 )
 
 [node name="Player" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 640, 360 )
+position = Vector2( 668.527, 360 )
 
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 
