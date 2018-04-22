@@ -3,7 +3,7 @@
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://TextInput/TextInput.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 
@@ -15,12 +15,12 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
-"_edit_vertical_guides_": [ -527.848 ]
+"_edit_vertical_guides_": [  ]
 }
 
 [node name="UI" type="CanvasLayer" parent="." index="0"]
@@ -114,54 +114,27 @@ margin_bottom = 630.0
 
 [node name="Level" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
+[node name="Wall" parent="Level" index="0" instance=ExtResource( 4 )]
 
-[node name="Tree" parent="Level" index="0" instance=ExtResource( 4 )]
+position = Vector2( 640, -16 )
+width = 1280
 
-visible = false
-position = Vector2( 309.778, 258.723 )
+[node name="Wall2" parent="Level" index="1" instance=ExtResource( 4 )]
 
-[node name="Tree2" parent="Level" index="1" instance=ExtResource( 4 )]
+position = Vector2( 640, 736 )
+width = 1280
 
-visible = false
-position = Vector2( 408.428, 342.166 )
+[node name="Wall3" parent="Level" index="2" instance=ExtResource( 4 )]
 
-[node name="Tree3" parent="Level" index="2" instance=ExtResource( 4 )]
+position = Vector2( -16, 360 )
+height = 790
 
-visible = false
-position = Vector2( 692.232, 149.151 )
+[node name="Wall4" parent="Level" index="3" instance=ExtResource( 4 )]
 
-[node name="Tree4" parent="Level" index="3" instance=ExtResource( 4 )]
+position = Vector2( 1296, 360 )
+height = 790
 
-visible = false
-position = Vector2( 589.696, 402.778 )
-
-[node name="Tree5" parent="Level" index="4" instance=ExtResource( 4 )]
-
-visible = false
-position = Vector2( 1158.59, 176.91 )
-
-[node name="Tree6" parent="Level" index="5" instance=ExtResource( 4 )]
-
-visible = false
-position = Vector2( 819.924, 200.968 )
-
-[node name="Tree7" parent="Level" index="6" instance=ExtResource( 4 )]
-
-visible = false
-position = Vector2( 1137.47, 528.62 )
-
-[node name="Tree8" parent="Level" index="7" instance=ExtResource( 4 )]
-
-visible = false
-position = Vector2( 830.276, 589.69 )
-
-[node name="Tree9" parent="Level" index="8" instance=ExtResource( 4 )]
-
-visible = false
-position = Vector2( 319.598, 436.548 )
-
-[node name="Spawn" parent="Level" index="9" instance=ExtResource( 5 )]
+[node name="Spawn" parent="Level" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 638.946, 615.432 )
 
@@ -171,10 +144,11 @@ position = Vector2( 638.946, 615.432 )
 
 [node name="Player" parent="." index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 668.527, 360 )
+position = Vector2( 1156.39, 114.419 )
 
-[node name="PlayerCamera" type="Camera2D" parent="Player" index="5"]
+[node name="PlayerCamera" type="Camera2D" parent="Player" index="4"]
 
+visible = false
 scale = Vector2( 0.25, 0.25 )
 anchor_mode = 1
 rotating = false
