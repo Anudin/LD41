@@ -3,11 +3,10 @@ extends Node2D
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 
-# TODO: Remember if tutorial was already showed, reshow it via menu -> Safestate
 # TODO: Implement progression -> Write level texts
 
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
-# TODO: Main, Pause, death... menu - New Game, Continue, Controls maybe difficulty setting
+# TODO: Main, Pause (show tutorial), death... menu - New Game, Continue, Controls maybe difficulty setting
 
 # TODO: Particles - trails!, blood, smoke etc.
 

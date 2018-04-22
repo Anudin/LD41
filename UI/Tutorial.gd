@@ -1,5 +1,7 @@
 extends Label
 
+var played = false
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -11,6 +13,7 @@ func _process(delta):
 	pass
 
 func _input(event):
-	if event.is_action("ui_accept"):
+	if event.is_action("tutorial_accept"):
+		played = true
 		hide()
 		get_tree().paused = false

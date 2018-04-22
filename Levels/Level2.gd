@@ -3,7 +3,7 @@ extends "res://Levels/Level.gd"
 var skip_tutorial = false
 
 func save():
-	return {"skip_tutorial": skip_tutorial}
+	return {"skip_tutorial": $TutorialLayer/TutorialText.played}
 
 func before():
 	if skip_tutorial:
