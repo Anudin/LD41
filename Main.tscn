@@ -15,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -120,8 +120,6 @@ margin_bottom = 630.0
 
 [node name="Level" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Tree" parent="Level" index="0" instance=ExtResource( 4 )]
 
 visible = false
@@ -169,7 +167,7 @@ position = Vector2( 319.598, 436.548 )
 
 [node name="Spawn" parent="Level" index="9" instance=ExtResource( 5 )]
 
-position = Vector2( 108.562, 140.296 )
+position = Vector2( 112.245, 139.068 )
 
 [node name="Spawn2" parent="Level" index="10" instance=ExtResource( 5 )]
 

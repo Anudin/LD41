@@ -2,7 +2,7 @@ extends Node2D
 
 # TODO: Fill queue from start / finish / clear it
 
-# TODO: Sound
+# TODO: Sound [Warn sound]
 # TODO: Tutorial
 # TODO: Particles - trails!, blood, smoke etc.
 
@@ -55,7 +55,6 @@ func update_temp_commands(action_code):
 func update_temp_commands_display():
 	var command_display = ""
 	
-	# TODO: Keep order
 	for key in TEMP_COMMANDS.keys():
 		command_display += TEMP_COMMANDS[key] + ": " + key + "\n"
 
