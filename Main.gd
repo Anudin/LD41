@@ -2,6 +2,7 @@ extends Node2D
 
 # Quirks: Can't rename folder (in use?)
 
+# TODO: Implement progression
 # TODO: Tutorial
 # TODO: Safestate
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
