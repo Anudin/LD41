@@ -2,9 +2,9 @@ extends Node2D
 
 # TODO: Fill queue from start / finish / clear it
 
-# TODO: REALLY satisfying shooting mechanic, explosions
 # TODO: Sound
 # TODO: Tutorial
+# TODO: Particles - trails!, blood, smoke etc.
 
 const COMMANDS = ["up", "down", "left", "right", "stop"]
 const TEMP_COMMANDS = {"sdf": "shoot"}

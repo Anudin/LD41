@@ -8,17 +8,12 @@ const SLOWMOTION_FACTOR = 0.3
 var last_position = Vector2(0,0)
 var speed = 30
 
-var cleanup = false
-
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
 
-func _process(delta):
-	if cleanup:
-		return
-	
+func _process(delta):	
 	var angle_to_player = rad2deg(Parent.get_angle_to(Player.position))
 	var modifiers = 1
 	
@@ -31,7 +26,7 @@ func _on_animation_finished():
 	pass#Parent.queue_free()
 
 func _on_area_entered(area):
-	cleanup = true
+	set_process(false)
 	Parent.get_node("Shadow").hide()
 	Parent.get_node("AnimationPlayer").stop()
 	Parent.get_node("Area2D/CollisionShape2D").disabled = true

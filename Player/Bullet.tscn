@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 1.01508, 0.963976 )
 
-[node name="Bullet" type="Sprite" groups=[
+[node name="Bullet" type="Sprite" index="0" groups=[
 "bullets",
 ]]
 
@@ -40,6 +40,8 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 0.0374146, -0.00497139 )
 scale = Vector2( 0.0723362, 0.0742961 )
 rect = Rect2( -2, -2, 4, 4 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited"]
 

@@ -16,3 +16,7 @@ func _process(delta):
 
 func _on_screen_exited():
 	queue_free()
+
+func _on_area_entered(area):
+	$Area2D/CollisionShape2D.disabled = true
+	queue_free()
