@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/player0.png" type="Texture" id=1]
 [ext_resource path="res://Player/player1.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
-[ext_resource path="res://Player/debug_arrow.png" type="Texture" id=4]
-[ext_resource path="res://Player/right_marker.png" type="Texture" id=5]
-[ext_resource path="res://Player/left_marker.png" type="Texture" id=6]
+[ext_resource path="res://Player/right_marker.png" type="Texture" id=4]
+[ext_resource path="res://Player/left_marker.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -32,6 +31,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 0.0863914, 0.712502 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -47,25 +47,41 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -0.0484276, 0.67799 )
 shape = SubResource( 2 )
 
-[node name="DebugArrow" type="Sprite" parent="." index="1"]
-
-visible = false
-position = Vector2( 0.0179672, 0.0113721 )
-rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
-offset = Vector2( 7.01266, 0.0802631 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="right_marker" type="Sprite" parent="." index="2"]
+[node name="right_marker" type="Sprite" parent="." index="1"]
 
 position = Vector2( -5.0389, 9.92342 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
-[node name="left_marker" type="Sprite" parent="." index="3"]
+[node name="left_marker" type="Sprite" parent="." index="2"]
 
 position = Vector2( 5.20377, 9.93085 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1.25, 1.25 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.15
+drag_margin_top = 0.25
+drag_margin_right = 0.15
+drag_margin_bottom = 0.25
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin" ]
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_shape_entered"]
 

@@ -1,5 +1,7 @@
 extends Node2D
 
+# Quirks: Can't rename folder (in use?)
+
 # TODO: Fill queue from start / finish / clear it
 
 # TODO: Sound [Warn sound]
@@ -17,9 +19,6 @@ func _ready():
 
 func _process(delta):
 	pass
-#	if get_tree().get_nodes_in_group("enemies").size() == 0:
-#		print("You're a winner!")
-#		call_deferred("restart_game")
 
 func verify_command(command):
 	if COMMANDS.has(command):

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=3]
+
+[node name="Level" type="Node2D"]
+
+script = ExtResource( 1 )
+LAUNCH_CODE_LENGTH = 3
+SLOWMOTION_MODIFIER = 0.3
+
+[node name="Obstacles" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
+
+[node name="Wall" parent="Obstacles" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 640, -16 )
+width = 1280
+
+[node name="Wall2" parent="Obstacles" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 640, 736 )
+width = 1280
+
+[node name="Wall3" parent="Obstacles" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -16, 360 )
+height = 790
+
+[node name="Wall4" parent="Obstacles" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 1296, 360 )
+height = 790
+
+[node name="Spawns" type="Node2D" parent="." index="1"]
+
+[node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 623.073, 568.347 )
+
+

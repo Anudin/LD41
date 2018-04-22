@@ -61,7 +61,6 @@ tracks/0/keys = {
 scale = Vector2( 4, 4 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
 playing = true
 script = ExtResource( 9 )
 _sections_unfolded = [ "Offset", "Transform" ]

@@ -25,6 +25,8 @@ func _process(delta):
 		stop()
 
 func _on_text_command(command):
+	#print("Player received: " + command)
+	
 	movement(command)
 	
 	if command == "shoot":				

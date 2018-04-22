@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://TextInput/TextInput.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -15,9 +14,10 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
 "_edit_vertical_guides_": [  ]
@@ -25,7 +25,6 @@ __meta__ = {
 
 [node name="UI" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -112,72 +111,18 @@ margin_top = 630.0
 margin_right = 48.0
 margin_bottom = 630.0
 
-[node name="Level" type="Node2D" parent="." index="1"]
-
-[node name="Wall" parent="Level" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 640, -16 )
-width = 1280
-
-[node name="Wall2" parent="Level" index="1" instance=ExtResource( 4 )]
-
-position = Vector2( 640, 736 )
-width = 1280
-
-[node name="Wall3" parent="Level" index="2" instance=ExtResource( 4 )]
-
-position = Vector2( -16, 360 )
-height = 790
-
-[node name="Wall4" parent="Level" index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 1296, 360 )
-height = 790
-
-[node name="Spawn" parent="Level" index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 638.946, 615.432 )
+[node name="Level" parent="." index="1" instance=ExtResource( 4 )]
 
 [node name="Bullets" type="Node2D" parent="." index="2"]
 
 [node name="AI" type="Node2D" parent="." index="3"]
 
-[node name="Player" parent="." index="4" instance=ExtResource( 6 )]
+[node name="Player" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 1156.39, 114.419 )
-
-[node name="PlayerCamera" type="Camera2D" parent="Player" index="4"]
-
-visible = false
-scale = Vector2( 0.25, 0.25 )
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-smoothing_speed = 3.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = true
-_sections_unfolded = [ "Drag Margin", "Smoothing", "Transform" ]
+position = Vector2( 618.897, 180.627 )
 
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 
 [connection signal="text_command" from="UI/TextInput" to="Player" method="_on_text_command"]
-
-[connection signal="health_changed" from="Player" to="." method="_on_health_changed"]
 
 
