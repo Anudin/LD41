@@ -5,7 +5,6 @@ extends Node2D
 # -> Refactor player hehaviour
 # -> Add state machine to level system (transitions etc.)
 
-# TODO: Health Bar
 # TODO: Tutorial
 # TODO: Safestate
 
@@ -21,7 +20,7 @@ func _ready():
 	randomize()
 	
 	_on_queue_updated([])
-	update_temp_commands("sdf")
+	update_temp_commands(TEMP_COMMANDS.keys()[0])
 
 func _process(delta):
 	pass
@@ -65,9 +64,9 @@ func update_temp_commands_display():
 
 	$UI/CommandMapping.text = command_display
 
-func _on_health_changed(health):
+func _on_health_changed(health):	
 	if health > 0:
-		$UI/PlayerHealth.text = str(health)
+		$UI/PlayerHealth.value = health
 	else:
 		call_deferred("restart_game")
 		
