@@ -6,7 +6,7 @@ extends Node2D
 # TODO: Tutorial
 # TODO: Particles - trails!, blood, smoke etc.
 
-const COMMANDS = ["up", "down", "left", "right", "stop"]
+const COMMANDS = ["go", "stop", "left", "right"]
 const TEMP_COMMANDS = {"sdf": "shoot"}
 
 func _ready():

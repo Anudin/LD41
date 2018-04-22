@@ -27,6 +27,7 @@ func _on_animation_finished():
 
 func _on_area_entered(area):
 	set_process(false)
+	Parent.z_index = -1
 	Parent.get_node("Shadow").hide()
 	Parent.get_node("AnimationPlayer").stop()
 	Parent.get_node("Area2D/CollisionShape2D").disabled = true
