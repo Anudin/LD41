@@ -10,9 +10,6 @@ extends Node2D
 # TODO: Main, Pause, death... menu - New Game, Continue, Controls maybe difficulty setting
 # TODO: Particles - trails!, blood, smoke etc.
 
-# Maybe fix:
-# -> ready gets called twice?!
-
 var COMMANDS = []
 const TEMP_COMMANDS = {"sdf": "shoot"}
 

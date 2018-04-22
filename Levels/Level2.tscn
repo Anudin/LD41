@@ -17,8 +17,6 @@ Movement = ExtResource( 2 )
 
 [node name="Spawns" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 1063.64, 553.242 )
