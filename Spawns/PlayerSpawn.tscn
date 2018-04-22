@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Spawns/player_spawn.png" type="Texture" id=1]
+[ext_resource path="res://Spawns/player_spawn - Kopie.png" type="Texture" id=1]
 [ext_resource path="res://Spawns/PlayerSpawn.gd" type="Script" id=2]
 
 [node name="PlayerSpawn" type="Sprite"]
 
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]

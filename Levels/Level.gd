@@ -18,7 +18,8 @@ func _ready():
 	connect("level_finished", $"/root/Main", "change_level")
 
 func after():
-	pass
+	queue_free()
+	get_parent().remove_child(self)
 
 func _process(delta):
 	if win_condition():

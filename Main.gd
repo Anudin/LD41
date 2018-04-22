@@ -1,6 +1,7 @@
 extends Node2D
 
 # Quirks: Can't rename folder (in use?)
+# Quirks: Child remove doesn't work...
 
 # TODO: Implement progression
 # TODO: Tutorial
@@ -84,5 +85,7 @@ func change_level(path):
 		$Level.add_child(level)
 	else:
 		$Level/Level.after()
+#		$Level/Level.queue_free()
+#		remove_child($Level/Level)
 		level.before()
-		$Level/Level.replace_by(level)
+		$Level.add_child(level)
