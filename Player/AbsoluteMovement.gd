@@ -33,4 +33,8 @@ func _on_text_command(command):
 				Player.direction = Vector2(1,0)
 				Player.velocity.y = 0
 		
+		# Direct change of direction
+		if Player.velocity + Player.direction * Player.SPEED_MODIFIER == Vector2(0,0):
+			Player.velocity = Vector2(0,0)
+		
 		Player.velocity += Player.direction * Player.SPEED_MODIFIER
