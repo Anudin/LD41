@@ -49,8 +49,8 @@ func movement(command):
 	elif command == "stop":
 		velocity = Vector2(0,0)
 	
-	$right_marker.global_rotation = 0
-	$left_marker.global_rotation = 0
+	$RightMarker.global_rotation = 0
+	$LeftMarker.global_rotation = 0
 
 func _on_hit():
 	health -= 25

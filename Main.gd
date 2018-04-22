@@ -7,6 +7,10 @@ extends Node2D
 
 # TODO: Health Bar
 # TODO: Tutorial
+# TODO: Safestate
+
+# TODO: Main menu - New Game, Continue, Controls maybe difficulty setting
+
 # TODO: Sound [Warn sound]
 # TODO: Particles - trails!, blood, smoke etc.
 
