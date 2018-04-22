@@ -2,10 +2,11 @@ extends Node2D
 
 # Quirks: Can't rename folder (in use?)
 
-# TODO: Fill queue from start / finish / clear it
+# -> Refactor player hehaviour
+# -> Add state machine to level system (transitions etc.)
 
-# TODO: Sound [Warn sound]
 # TODO: Tutorial
+# TODO: Sound [Warn sound]
 # TODO: Particles - trails!, blood, smoke etc.
 
 const COMMANDS = ["go", "stop", "left", "right"]
