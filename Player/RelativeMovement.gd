@@ -2,7 +2,10 @@ extends Node
 
 onready var Player = get_parent()
 
+const COMMANDS = ["go", "stop", "left", "right"]
+
 func _ready():
+	$"/root/Main".COMMANDS = COMMANDS
 	$"/root/Main/UI/TextInput".connect("text_command", self, "_on_text_command")
 
 func _on_text_command(command):

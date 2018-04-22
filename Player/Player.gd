@@ -43,3 +43,10 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 	if area.is_in_group("walls"):
 		position = last_position
 		velocity = Vector2(0,0)
+
+func change_movement(movement):
+	if has_node("Movement"):
+		$Movement.queue_free()
+		remove_child($Movement)
+	
+	add_child(movement)

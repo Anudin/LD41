@@ -11,7 +11,7 @@ extends Node2D
 # TODO: Main menu - New Game, Continue, Controls maybe difficulty setting
 # TODO: Particles - trails!, blood, smoke etc.
 
-const COMMANDS = ["go", "stop", "left", "right"]
+var COMMANDS = []
 const TEMP_COMMANDS = {"sdf": "shoot"}
 
 func _ready():
