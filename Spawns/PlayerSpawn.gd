@@ -9,6 +9,7 @@ func _ready():
 	player.position = position
 	player.rotation = 0
 	player.velocity = Vector2(0,0)
+	player.get_node("Camera2D").align()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

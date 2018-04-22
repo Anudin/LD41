@@ -7,6 +7,14 @@ export var SLOWMOTION_MODIFIER = 0.3
 export var SHOW_DIR_HINT = false
 export(PackedScene) var Movement
 
+# Implement in each script
+func win_condition():
+	pass
+
+# Implement if needed
+func save():
+	return {}
+
 func before():
 	pass
 

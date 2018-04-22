@@ -3,20 +3,25 @@ extends Node2D
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 
-# TODO: Implement progression
-# TODO: Tutorial
-# TODO: Safestate
+# TODO: Remember if tutorial was already showed, reshow it via menu -> Safestate
+# TODO: Implement progression -> Write level texts
+
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Main, Pause, death... menu - New Game, Continue, Controls maybe difficulty setting
+
 # TODO: Particles - trails!, blood, smoke etc.
+
+# If time I may add the walk sim joke at the beginning. Shouldn't take long.
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"sdf": "shoot"}
 
+var level_path
+
 func _ready():
 	randomize()
 	
-	change_level("res://Levels/Level1.tscn")
+	load_game()
 	_on_queue_updated([])
 	update_temp_commands(TEMP_COMMANDS.keys()[0])
 
@@ -74,13 +79,48 @@ func restart_game():
 	root.add_child(load("res://Main.tscn").instance())
 	queue_free()
 
-func change_level(path):
+func change_level(path, args = null):
+	level_path = path
 	var level = load(path).instance()
+	
+	if args != null:
+		for variable in args.keys():
+			level.set(variable, args[variable])
 	
 	if not has_node("Level/Level"):
 		$Level.add_child(level)
 	else:
-		$Level/Level.after()
-#		$Level/Level.queue_free()
-#		remove_child($Level/Level)
+		$Level/Level.after()		
 		$Level.add_child(level)
+	
+	save_game()
+		
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		save_game()
+
+func save_game():
+	var variables = $Level/Level.save()
+	variables["level"] = level_path
+	
+	var save_file = File.new()
+	save_file.open("user://ld41.save", File.WRITE)
+	save_file.store_line(to_json(variables))
+	save_file.close()
+
+func load_game():
+	var save_file = File.new()
+	save_file.open("user://ld41.save", File.READ)
+	
+	if not save_file.file_exists("user://ld41.save"):
+		change_level("res://Levels/Level1.tscn")
+		return
+	else:
+		var data = parse_json(save_file.get_line())
+		var level = data["level"]
+		data.erase("level")
+		var args = data
+		
+		change_level(level, args)
+	
+	save_file.close()
