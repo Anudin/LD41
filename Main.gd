@@ -81,11 +81,9 @@ func change_level(path):
 	var level = load(path).instance()
 	
 	if not has_node("Level/Level"):
-		level.before()
 		$Level.add_child(level)
 	else:
 		$Level/Level.after()
 #		$Level/Level.queue_free()
 #		remove_child($Level/Level)
-		level.before()
 		$Level.add_child(level)

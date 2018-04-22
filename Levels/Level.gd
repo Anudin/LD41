@@ -16,6 +16,8 @@ func _ready():
 	$"/root/Main/Player".change_movement(Movement.instance())
 	
 	connect("level_finished", $"/root/Main", "change_level")
+	
+	before()
 
 func after():
 	queue_free()

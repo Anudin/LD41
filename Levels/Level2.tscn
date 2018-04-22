@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level2.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=4]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
