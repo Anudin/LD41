@@ -36,7 +36,7 @@ func load_wave():
 	LAUNCH_CODE_LENGTH = waves[wave][5]
 
 func after():
-	OS.set_window_title(str(score))
+	OS.set_window_title("Last Score: " + str(score))
 
 func increase_score():
 	score += 5

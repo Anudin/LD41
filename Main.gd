@@ -110,6 +110,7 @@ func player_died():
 	call_deferred("restart_game")
 
 func restart_game():
+	$Level/Level.after()
 	save_game()
 	
 	var main = load("res://Main.tscn").instance()
