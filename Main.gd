@@ -5,6 +5,7 @@ extends Node2D
 
 # Necessary:
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
+# TODO: Win / Die notifications - at least in the last level.
 # TODO: Particles - trails!, smoke, blood etc.
 
 # Set player rotation on spawn
@@ -39,7 +40,7 @@ func _ready():
 		game_loaded = load_game()
 	if not game_loaded:
 		# TODO: Change to correct value
-		change_level("res://Levels/Level4.tscn")
+		change_level("res://Levels/EndLevel.tscn")
 	
 	_on_queue_updated([])
 	update_temp_commands(TEMP_COMMANDS.keys()[0])
