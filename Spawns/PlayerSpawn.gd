@@ -8,6 +8,7 @@ func _ready():
 	var player = $"/root/Main/Player"
 	player.position = position
 	player.rotation = 0
+	player.direction = Vector2(0,1)
 	player.velocity = Vector2(0,0)
 	player.get_node("Camera2D").align()
 
