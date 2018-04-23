@@ -18,7 +18,7 @@ var waves = [
 ]
 
 func next_wave():
-	if wave <= waves.size():
+	if wave < waves.size():
 		wave += 1
 	
 	load_wave()

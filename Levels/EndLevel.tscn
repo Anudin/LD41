@@ -50,7 +50,7 @@ FOLLOWING_SCENE_PATH = "res://Levels/EndLevel.tscn"
 [node name="WaveTimer" type="Timer" parent="." index="0"]
 
 process_mode = 1
-wait_time = 5.0
+wait_time = 20.0
 one_shot = false
 autostart = true
 
@@ -107,17 +107,19 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="TutorialText" parent="." index="4" instance=ExtResource( 4 )]
 
-margin_left = 293.0
-margin_top = 87.0
-margin_right = 995.0
-margin_bottom = 288.0
+margin_left = 175.0
+margin_top = 125.0
+margin_right = 1163.0
+margin_bottom = 598.0
 text = "This is the final level.
 Survive as long as you can.
-Good luck."
+Good luck.
+
+
+P.S.: We gave you penetrating bullets.
+You'll need them."
 
 [node name="Obstacles" type="Node2D" parent="." index="5"]
-
-editor/display_folded = true
 
 [node name="Limiter" type="Node2D" parent="Obstacles" index="0"]
 
@@ -143,7 +145,53 @@ height = 1472
 position = Vector2( 1920, 360 )
 height = 1472
 
+[node name="Wall" parent="Obstacles" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 652.594, 704.148 )
+width = 256
+
+[node name="Wall2" parent="Obstacles" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 652.594, 15.7042 )
+width = 256
+
+[node name="Wall5" parent="Obstacles" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 1802.4, -234.656 )
+rotation = 0.785398
+width = 350
+
+[node name="Wall7" parent="Obstacles" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 1789.78, 952.875 )
+rotation = 2.35619
+width = 350
+
+[node name="Wall8" parent="Obstacles" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -511.757, 952.875 )
+rotation = -2.35619
+width = 350
+
+[node name="Wall6" parent="Obstacles" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( -512.663, -234.656 )
+rotation = -0.785398
+width = 350
+
+[node name="Wall3" parent="Obstacles" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 1263.35, 363.124 )
+height = 256
+
+[node name="Wall4" parent="Obstacles" index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 15.981, 363.124 )
+height = 256
+
 [node name="Spawns" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
 
 [node name="Position2D" type="Position2D" parent="Spawns" index="0"]
 
@@ -178,11 +226,11 @@ position = Vector2( 1612.9, 389.891 )
 
 [node name="Position2D7" type="Position2D" parent="Spawns" index="7"]
 
-position = Vector2( 1612.9, 884.429 )
+position = Vector2( 1846.52, 1002.76 )
 
 [node name="Position2D8" type="Position2D" parent="Spawns" index="8"]
 
-position = Vector2( 1612.9, -169.556 )
+position = Vector2( 1852.12, -282.099 )
 
 [node name="Position2D4" type="Position2D" parent="Spawns" index="9"]
 
@@ -190,11 +238,11 @@ position = Vector2( -328.166, 389.891 )
 
 [node name="Position2D5" type="Position2D" parent="Spawns" index="10"]
 
-position = Vector2( -328.166, 878.248 )
+position = Vector2( -562.351, 1009.21 )
 
 [node name="Position2D6" type="Position2D" parent="Spawns" index="11"]
 
-position = Vector2( -328.166, -169.557 )
+position = Vector2( -566.163, -277.737 )
 
 [node name="PlayerSpawn" parent="." index="7" instance=ExtResource( 6 )]
 
