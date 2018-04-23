@@ -37,7 +37,7 @@ func _ready():
 		game_loaded = load_game()
 	if not game_loaded:
 		# TODO: Change to correct value
-		change_level("res://Levels/Level1.tscn")
+		change_level("res://Levels/Level2.tscn")
 		
 	
 	_on_queue_updated([])

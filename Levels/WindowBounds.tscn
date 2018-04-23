@@ -4,6 +4,8 @@
 
 [node name="Obstacles" type="Node2D"]
 
+_sections_unfolded = [ "Transform" ]
+
 [node name="Wall" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 640, -16 )

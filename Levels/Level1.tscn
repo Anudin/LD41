@@ -8,7 +8,7 @@
 [ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=7]
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
@@ -30,12 +30,16 @@ align = 1
 
 [node name="Obstacles" parent="." index="1" instance=ExtResource( 4 )]
 
+editor/display_folded = true
+
 [node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 640, 335.308 )
 width = 224
 
 [node name="Spawns" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 6 )]
 

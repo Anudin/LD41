@@ -1,54 +1,96 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Level2.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://environment/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=8]
 
-[node name="Level" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
-SLOWMOTION_MODIFIER = 0.3
+SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
 Movement = ExtResource( 2 )
-FOLLOWING_SCENE_PATH = null
+FOLLOWING_SCENE_PATH = "res://Levels/Level2.tscn"
 
-[node name="TutorialLayer" type="CanvasLayer" parent="." index="0"]
+[node name="TutorialText" parent="." index="0" instance=ExtResource( 3 )]
 
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
+margin_left = 475.0
+margin_top = 67.0
+margin_right = 1359.0
+margin_bottom = 220.0
+custom_fonts/font = SubResource( 1 )
+text = "Oh no. That doesn't look like fun.
+I really wouldn't like to do that if
+I was in your position. Poor bastard.
+
+Try to enter a command and hit Space.
+You can queue up to 3 commands and
+execute them one by one with Space.
+Use this to get to the goal."
+
+[node name="Goal" parent="." index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 45.1718, 676.048 )
+
+[node name="Obstacles" parent="." index="2" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+
+[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( 124.83, 117.38 )
+width = 250
+
+[node name="Wall6" parent="Obstacles" index="5" instance=ExtResource( 7 )]
+
+position = Vector2( 124.83, 346.856 )
+width = 250
+
+[node name="Wall7" parent="Obstacles" index="6" instance=ExtResource( 7 )]
+
+position = Vector2( 212.881, 234.249 )
+width = 250
+
+[node name="Wall8" parent="Obstacles" index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 212.881, 465 )
 scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+width = 250
 
-[node name="TutorialText" parent="TutorialLayer" index="0" instance=ExtResource( 3 )]
+[node name="Wall9" parent="Obstacles" index="8" instance=ExtResource( 7 )]
 
-margin_left = 334.0
-margin_top = 392.0
-margin_right = 724.0
-margin_bottom = 457.0
-text = "dsafdsffdsaafsd"
+position = Vector2( 353.212, 125.123 )
+height = 250
 
-[node name="Obstacles" type="Node2D" parent="." index="1"]
+[node name="Wall10" parent="Obstacles" index="9" instance=ExtResource( 7 )]
 
-[node name="Spawns" type="Node2D" parent="." index="2"]
+position = Vector2( 104, 595.201 )
+height = 250
 
-[node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 4 )]
+[node name="Wall11" parent="Obstacles" index="10" instance=ExtResource( 7 )]
 
-position = Vector2( 1063.64, 553.242 )
-DESTROYABLE = false
+position = Vector2( 353.212, 356 )
+scale = Vector2( 1, 1 )
+height = 250
 
-[node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 4 )]
+[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 8 )]
 
-position = Vector2( 701.117, 178.129 )
-DESTROYABLE = false
+position = Vector2( 54.0255, 48.6916 )
 
-[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 1075.6, 177.039 )
-
-[node name="AI" type="Node2D" parent="." index="4"]
+[connection signal="player_arrived" from="Goal" to="." method="set" binds= [ "arrived", true ]]
 
 

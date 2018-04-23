@@ -2,18 +2,20 @@ extends "res://Levels/Level.gd"
 
 var skip_tutorial = false
 
+var arrived = false
+
 func save():
-	return {"skip_tutorial": $TutorialLayer/TutorialText.played}
+	return {"skip_tutorial": $TutorialText.played}
 
 func before():
 	if skip_tutorial:
-		$TutorialLayer/TutorialText.hide()
+		$TutorialText.hide()
 		return
 	
 	get_tree().paused = true
 
 func win_condition():
-	return get_tree().get_nodes_in_group("enemy_spawn").size() == 0
+	return arrived
 
 func _ready():
 	pass
