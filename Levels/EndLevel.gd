@@ -25,7 +25,9 @@ func next_wave():
 	
 	for spawn_position in $Spawns.get_children():
 		if spawn_position.get_children().size() != 0:
-			spawn_position.remove_child(spawn_position.get_child(0))
+			var spawn = spawn_position.get_child(0)
+			spawn.queue_free()
+			spawn_position.remove_child(spawn)
 	
 	load_wave()
 
