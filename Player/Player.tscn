@@ -23,11 +23,12 @@ extents = Vector2( 4.02826, 7.48546 )
 [node name="Player" type="AnimatedSprite"]
 
 scale = Vector2( 4, 4 )
+z_index = 1
 frames = SubResource( 1 )
 animation = "default"
 offset = Vector2( 0, 2 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 

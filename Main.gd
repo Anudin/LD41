@@ -41,7 +41,7 @@ func _ready():
 		game_loaded = load_game()
 	if not game_loaded:
 		# TODO: Change to correct value
-		change_level("res://Levels/EndLevel.tscn")
+		change_level("res://Levels/Intro.tscn")
 	
 	_on_queue_updated([])
 	update_temp_commands(TEMP_COMMANDS.keys()[0])
@@ -98,9 +98,14 @@ func _on_health_changed(health):
 		call_deferred("restart_game")
 		
 func restart_game():
+	save_game()
+	
+	var main = load("res://Main.tscn").instance()
+	main.continue_game = true
+	
 	var root = $"/root"
 	root.remove_child($"/root/Main")
-	root.add_child(load("res://Main.tscn").instance())
+	root.add_child(main)
 	queue_free()
 
 func change_level(path, args = null):
@@ -114,10 +119,10 @@ func change_level(path, args = null):
 	if not has_node("Level/Level"):
 		$Level.add_child(level)
 	else:
-		$Level/Level.after()		
+		$Level/Level.after()
 		$Level.add_child(level)
+		save_game()
 	
-	save_game()
 		
 #func _notification(what):
 #	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:

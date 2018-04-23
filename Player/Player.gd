@@ -23,6 +23,10 @@ func _process(delta):
 		play("default")
 	else:
 		stop()
+		
+	# Rotate labels so they face upside in case the player was moved
+	$RightMarker.global_rotation = 0
+	$LeftMarker.global_rotation = 0
 
 func _on_text_command(command):
 	if command == "shoot":				
@@ -30,10 +34,6 @@ func _on_text_command(command):
 		bullet.setup(direction)
 		bullet.position = position
 		$"/root/Main/Bullets".add_child(bullet)
-	
-	# Rotate labels so they face upside in case the player was moved
-	$RightMarker.global_rotation = 0
-	$LeftMarker.global_rotation = 0
 
 func _on_hit():
 	health -= 25

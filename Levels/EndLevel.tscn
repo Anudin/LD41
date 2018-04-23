@@ -44,17 +44,11 @@ __meta__ = {
 LAUNCH_CODE_LENGTH = 3
 SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
+PENETRATE_ENEMY = true
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/EndLevel.tscn"
 
-[node name="WaveTimer" type="Timer" parent="." index="0"]
-
-process_mode = 1
-wait_time = 20.0
-one_shot = false
-autostart = true
-
-[node name="ScoreAnimation" type="AnimationPlayer" parent="." index="1"]
+[node name="ScoreAnimation" type="AnimationPlayer" parent="." index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -64,14 +58,14 @@ playback_speed = 1.0
 anims/score_effect = SubResource( 2 )
 blend_times = [  ]
 
-[node name="ScoreTimer" type="Timer" parent="." index="2"]
+[node name="ScoreTimer" type="Timer" parent="." index="1"]
 
 process_mode = 1
 wait_time = 5.0
 one_shot = false
 autostart = true
 
-[node name="ScoreLayer" type="CanvasLayer" parent="." index="3"]
+[node name="ScoreLayer" type="CanvasLayer" parent="." index="2"]
 
 editor/display_folded = true
 layer = 1
@@ -105,7 +99,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="TutorialText" parent="." index="4" instance=ExtResource( 4 )]
+[node name="TutorialText" parent="." index="3" instance=ExtResource( 4 )]
 
 margin_left = 175.0
 margin_top = 125.0
@@ -119,7 +113,7 @@ Good luck.
 P.S.: We gave you penetrating bullets.
 You'll need them."
 
-[node name="Obstacles" type="Node2D" parent="." index="5"]
+[node name="Obstacles" type="Node2D" parent="." index="4"]
 
 [node name="Limiter" type="Node2D" parent="Obstacles" index="0"]
 
@@ -189,7 +183,7 @@ height = 256
 position = Vector2( 15.981, 363.124 )
 height = 256
 
-[node name="Spawns" type="Node2D" parent="." index="6"]
+[node name="Spawns" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
 
@@ -244,13 +238,11 @@ position = Vector2( -562.351, 1009.21 )
 
 position = Vector2( -566.163, -277.737 )
 
-[node name="PlayerSpawn" parent="." index="7" instance=ExtResource( 6 )]
+[node name="PlayerSpawn" parent="." index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 640, 360 )
 
-[node name="AI" type="Node2D" parent="." index="8"]
-
-[connection signal="timeout" from="WaveTimer" to="." method="next_wave"]
+[node name="AI" type="Node2D" parent="." index="7"]
 
 [connection signal="timeout" from="ScoreTimer" to="." method="increase_score"]
 

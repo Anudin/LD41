@@ -5,6 +5,7 @@ signal level_finished
 export var LAUNCH_CODE_LENGTH = 3
 export var SLOWMOTION_MODIFIER = 0.33
 export var SHOW_DIR_HINT = false
+export var PENETRATE_ENEMY = false
 export(PackedScene) var Movement
 export(String) var FOLLOWING_SCENE_PATH
 
