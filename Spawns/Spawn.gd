@@ -30,12 +30,15 @@ func _on_timeout():
 	
 	play("open")
 	var spawn = AI.instance()
-	spawn.position = position
-	$"../../AI".add_child(spawn)
+	spawn.position = global_position
+	$"/root/Main/Level/Level/AI".add_child(spawn)
 	
 	spawned += 1
 
 func _on_area_entered(area):	
+	destroy()
+
+func destroy():
 	$Timer.stop()
 	z_index = -1
 	destroyed = true
