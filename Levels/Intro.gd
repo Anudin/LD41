@@ -9,6 +9,9 @@ var responses = [
 	"You could've at least included audio commentary."
 ] setget , get_responses
 
+func before():
+	get_tree().paused = true
+
 func win_condition():
 	return arrived
 

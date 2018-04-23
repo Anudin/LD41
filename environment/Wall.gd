@@ -21,10 +21,10 @@ func set_width(value):
 	width = value
 	
 	if has_node("Sprite"):
-		$Sprite.scale.x = value / 16
+		$Sprite.scale.x = value / 16.0
 	
 func set_height(value):
 	height = value
 	
 	if has_node("Sprite"):
-		$Sprite.scale.y = value / 16
+		$Sprite.scale.y = value / 16.0

@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://environment/tree.png" type="Texture" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 32
 use_mipmaps = false
@@ -12,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 
 resource_name = "fade_text"
 length = 4.0
@@ -31,12 +31,12 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 35.0286, 39.2018 )
+extents = Vector2( 44.3214, 48.7315 )
 
-[node name="Tree" type="Area2D"]
+[node name="Tree" type="Area2D" index="0"]
 
 pause_mode = 2
 input_pickable = true
@@ -66,7 +66,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "..."
 align = 1
@@ -83,12 +83,12 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/fade_text = SubResource( 3 )
+anims/fade_text = SubResource( 2 )
 blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="." index="3"]
 
