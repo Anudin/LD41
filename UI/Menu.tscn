@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://UI/menu_background.png" type="Texture" id=2]
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -11,5 +12,15 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
 selected = 0
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+modulate = Color( 0.273438, 0.202942, 0.202942, 1 )
+z_index = -1
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
+
+[node name="Options" type="Node2D" parent="." index="1"]
 
 

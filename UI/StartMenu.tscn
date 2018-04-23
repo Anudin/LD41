@@ -8,28 +8,28 @@
 
 script = ExtResource( 2 )
 
-[node name="Continue" parent="." index="0" instance=ExtResource( 3 )]
+[node name="Options" parent="." index="1"]
 
-margin_left = 527.0
-margin_top = 259.0
-margin_right = 769.0
-margin_bottom = 314.0
+position = Vector2( 211.303, 270.377 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Continue" parent="Options" index="0" instance=ExtResource( 3 )]
+
+margin_top = 0.0
+margin_bottom = 55.0
 text = "Continue"
 
-[node name="NewGame" parent="." index="1" instance=ExtResource( 3 )]
+[node name="NewGame" parent="Options" index="1" instance=ExtResource( 3 )]
 
-margin_left = 527.0
-margin_top = 319.0
-margin_right = 769.0
-margin_bottom = 374.0
+margin_top = 64.0
+margin_bottom = 119.0
 text = "New Game"
 
-[node name="ToggleAudio" parent="." index="2" instance=ExtResource( 3 )]
+[node name="ToggleAudio" parent="Options" index="2" instance=ExtResource( 3 )]
 
-margin_left = 527.0
-margin_top = 379.0
-margin_right = 769.0
-margin_bottom = 434.0
+margin_top = 128.0
+margin_right = 264.0
+margin_bottom = 183.0
 text = "Toggle Audio"
 
 
