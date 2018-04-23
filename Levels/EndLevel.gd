@@ -7,13 +7,16 @@ var skip_tutorial = false
 var score = 0
 var wave = 0
 
-# max spawns, max spawns per spawn, spawn_speed, slowmo mod, launcode length
+# max spawns, max spawns per spawn, spawn_speed, ?, slowmo mod, launcode length
 var waves = [
-[4, 5, 4, 5, .33, 3],
-[4, 5, 4, 5, .33, 3],
-[5, 5, 4, 5, .33, 3],
-[6, 5, 4, 5, .33, 3],
-[7, 5, 4, 5, .33, 3]
+[5, 3, 4, 5, .33, 3],
+[5, 4, 4, 5, .33, 3],
+[6, 3, 4, 5, .33, 4],
+[6, 4, 4, 5, .33, 4],
+[6, 3, 4, 5, .33, 5],
+[6, 3, 4, 5, .5, 5],
+[6, 3, 4, 5, 1, 5],
+[6, 3, 4, 5, 2, 5]
 ]
 
 func next_wave():

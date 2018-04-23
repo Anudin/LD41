@@ -7,7 +7,7 @@
 [ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=6]
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -17,6 +17,7 @@ __meta__ = {
 LAUNCH_CODE_LENGTH = 3
 SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
+PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level4.tscn"
 

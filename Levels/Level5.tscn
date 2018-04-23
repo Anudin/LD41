@@ -16,8 +16,9 @@ __meta__ = {
 LAUNCH_CODE_LENGTH = 3
 SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
+PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
-FOLLOWING_SCENE_PATH = "res://Levels/Level5.tscn"
+FOLLOWING_SCENE_PATH = "res://Levels/EndLevel.tscn"
 
 [node name="Obstacles" parent="." index="0" instance=ExtResource( 3 )]
 
