@@ -4,12 +4,13 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 
 # Necessary:
-# TODO: Main, Pause (show tutorial), death... menu - New Game, Continue, Controls maybe difficulty setting
+# TODO: Pause (show tutorial)
 # TODO: Plan, implement progression
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
-
-# Nice to have:
 # TODO: Particles - trails!, smoke, blood etc.
+
+# Post LD / if there is time:
+# TODO: Main menu: difficulty
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
