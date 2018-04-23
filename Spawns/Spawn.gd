@@ -1,5 +1,6 @@
 extends AnimatedSprite
 
+export var DESTROYABLE = false
 export var SPAWN_SPEED_SECS = 2.5
 export var MAX = 5
 
@@ -8,8 +9,14 @@ var AI = preload("res://AI/AI.tscn")
 var spawned = 0
 var destroyed = false
 
+func get_remaining_spawns():
+	return MAX - spawned
+
 func _ready():
 	$Timer.wait_time = SPAWN_SPEED_SECS
+	
+	if not DESTROYABLE:
+		$Area2D.disconnect("area_entered", self, "_on_area_entered")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -28,7 +35,7 @@ func _on_timeout():
 	
 	spawned += 1
 
-func _on_area_entered(area):
+func _on_area_entered(area):	
 	$Timer.stop()
 	z_index = -1
 	destroyed = true

@@ -28,6 +28,7 @@ func explode():
 	Parent.get_node("AnimationPlayer").stop()
 	Parent.get_node("Area2D/CollisionShape2D").disabled = true
 	Parent.get_node("Area2D/ExplosionTrigger").disabled = true
+	Parent.alive = false
 	Parent.rotate(deg2rad(randi()%135-90))
 	Parent.play("explode")
 

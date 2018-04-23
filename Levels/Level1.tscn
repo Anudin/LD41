@@ -1,35 +1,62 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=7]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
-SLOWMOTION_MODIFIER = 0.3
+SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level2.tscn"
 
-[node name="Obstacles" parent="." index="0" instance=ExtResource( 3 )]
+[node name="TutorialText" parent="." index="0" instance=ExtResource( 3 )]
 
-[node name="Spawns" type="Node2D" parent="." index="1"]
+margin_left = 63.0
+margin_top = 102.0
+margin_right = 1181.0
+margin_bottom = 303.0
+text = "Trying to shoot?
+Try the launch code in the top left corner.
+Fun fact: it changes after every shot."
+align = 1
 
-editor/display_folded = true
+[node name="Obstacles" parent="." index="1" instance=ExtResource( 4 )]
 
-[node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 4 )]
+[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 623.073, 568.347 )
-MAX = 0
+position = Vector2( 640, 335.308 )
+width = 224
 
-[node name="PlayerSpawn" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Spawns" type="Node2D" parent="." index="2"]
 
-position = Vector2( 626.321, 282.261 )
+[node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 6 )]
 
-[node name="AI" type="Node2D" parent="." index="3"]
+position = Vector2( 108.386, 623.712 )
+MAX = 2
+
+[node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 1158.27, 623.712 )
+MAX = 2
+
+[node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 640, 537.589 )
+DESTROYABLE = true
+MAX = 1
+
+[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 640, 59.5293 )
+
+[node name="AI" type="Node2D" parent="." index="4"]
 
 

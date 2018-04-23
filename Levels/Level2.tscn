@@ -35,15 +35,15 @@ text = "dsafdsffdsaafsd"
 
 [node name="Spawns" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
-
 [node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 1063.64, 553.242 )
+DESTROYABLE = false
 
 [node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 701.117, 178.129 )
+DESTROYABLE = false
 
 [node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 5 )]
 
