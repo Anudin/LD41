@@ -30,7 +30,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 4.02826, 7.48546 )
 
-[node name="Player" type="AnimatedSprite"]
+[node name="Player" type="AnimatedSprite" index="0"]
 
 scale = Vector2( 4, 4 )
 z_index = 1

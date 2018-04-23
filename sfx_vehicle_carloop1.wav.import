@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_vehicle_carloop1.wav-ac9ffdbfc993ce6ad8041c45a9f1745c.sample"
+
+[deps]
+
+source_file="res://sfx_vehicle_carloop1.wav"
+source_md5="39b226b2c5d5bb9fd63cfd1091f04ab9"
+
+dest_files=[ "res://.import/sfx_vehicle_carloop1.wav-ac9ffdbfc993ce6ad8041c45a9f1745c.sample" ]
+dest_md5="cc6171cdd9cb8fc05403c2e7a153dd79"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_wpn_cannon5.wav-d20eae4e32ad796a622b742b1abd28c9.sample"
+
+[deps]
+
+source_file="res://sfx_wpn_cannon5.wav"
+source_md5="747facabcac40d93ae5bd71828abcc0b"
+
+dest_files=[ "res://.import/sfx_wpn_cannon5.wav-d20eae4e32ad796a622b742b1abd28c9.sample" ]
+dest_md5="33f714438632957cbc6c3c6b8d12c7bc"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

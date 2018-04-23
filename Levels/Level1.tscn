@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=4]
-[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mars.wav" type="AudioStream" id=3]
+[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=8]
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
@@ -17,8 +18,9 @@ SHOW_DIR_HINT = false
 PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level2.tscn"
+BACKGROUND_MUSIC = ExtResource( 3 )
 
-[node name="TutorialText" parent="." index="0" instance=ExtResource( 3 )]
+[node name="TutorialText" parent="." index="0" instance=ExtResource( 4 )]
 
 margin_left = 63.0
 margin_top = 102.0
@@ -29,34 +31,34 @@ Try the launch code in the top left corner.
 Fun fact: it changes after every shot."
 align = 1
 
-[node name="Obstacles" parent="." index="1" instance=ExtResource( 4 )]
+[node name="Obstacles" parent="." index="1" instance=ExtResource( 5 )]
 
 editor/display_folded = true
 
-[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 5 )]
+[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 640, 335.308 )
 width = 224
 
 [node name="Spawns" type="Node2D" parent="." index="2"]
 
-[node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 6 )]
+[node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 108.386, 623.712 )
 MAX = 1
 
-[node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 6 )]
+[node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 1158.27, 623.712 )
 MAX = 1
 
-[node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 6 )]
+[node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 640, 537.589 )
 DESTROYABLE = true
 MAX = 1
 
-[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 7 )]
+[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 640, 59.5293 )
 

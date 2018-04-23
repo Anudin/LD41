@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_exp_double3.wav-ce891f6a3b39f0f3973c149a1d946885.sample"
+
+[deps]
+
+source_file="res://sfx_exp_double3.wav"
+source_md5="3d299ad6b3df8eabd4457406e9a05a11"
+
+dest_files=[ "res://.import/sfx_exp_double3.wav-ce891f6a3b39f0f3973c149a1d946885.sample" ]
+dest_md5="49347355015fcded7ee35e82b4a1cc5f"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Level3.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mars.wav" type="AudioStream" id=3]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
 
@@ -20,34 +21,35 @@ SHOW_DIR_HINT = false
 PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level4.tscn"
+BACKGROUND_MUSIC = ExtResource( 3 )
 
-[node name="Obstacles" parent="." index="0" instance=ExtResource( 3 )]
+[node name="Obstacles" parent="." index="0" instance=ExtResource( 4 )]
 
-[node name="Wall9" parent="Obstacles" index="4" instance=ExtResource( 4 )]
+[node name="Wall9" parent="Obstacles" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 638.166, 254.904 )
 width = 1300
 
-[node name="Wall10" parent="Obstacles" index="5" instance=ExtResource( 4 )]
+[node name="Wall10" parent="Obstacles" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 638.166, 461.363 )
 width = 1300
 
 [node name="Spawns" type="Node2D" parent="." index="1"]
 
-[node name="Spawn5" parent="Spawns" index="0" instance=ExtResource( 5 )]
+[node name="Spawn5" parent="Spawns" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 1058.9, 317.856 )
 SPAWN_SPEED_SECS = 4.0
 MAX = 3
 
-[node name="Spawn6" parent="Spawns" index="1" instance=ExtResource( 5 )]
+[node name="Spawn6" parent="Spawns" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 1058.9, 401.75 )
 SPAWN_SPEED_SECS = 4.0
 MAX = 3
 
-[node name="PlayerSpawn" parent="." index="2" instance=ExtResource( 6 )]
+[node name="PlayerSpawn" parent="." index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 94.604, 353.237 )
 

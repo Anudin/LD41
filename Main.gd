@@ -10,6 +10,7 @@ extends Node2D
 
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
+# Quirks: Area might be null
 
 # Necessary:
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
@@ -126,6 +127,10 @@ func restart_game():
 func change_level(path, args = null):
 	level_path = path
 	var level = load(path).instance()
+	
+	if $AudioStreamPlayer.stream != level.BACKGROUND_MUSIC:
+		$AudioStreamPlayer.stream = level.BACKGROUND_MUSIC
+		$AudioStreamPlayer.play()
 	
 	if args != null:
 		for variable in args.keys():

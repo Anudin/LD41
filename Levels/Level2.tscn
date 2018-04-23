@@ -1,20 +1,21 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/Level2.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=3]
-[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://environment/Goal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=6]
-[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mars.wav" type="AudioStream" id=3]
+[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://environment/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=7]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Level" type="Node2D"]
@@ -26,8 +27,9 @@ SHOW_DIR_HINT = false
 PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level3.tscn"
+BACKGROUND_MUSIC = ExtResource( 3 )
 
-[node name="TutorialText" parent="." index="0" instance=ExtResource( 3 )]
+[node name="TutorialText" parent="." index="0" instance=ExtResource( 4 )]
 
 margin_left = 475.0
 margin_top = 67.0
@@ -45,48 +47,48 @@ Use this to get to the goal.
 
 Tip: Delete queue with Backspace."
 
-[node name="Goal" parent="." index="1" instance=ExtResource( 5 )]
+[node name="Goal" parent="." index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 45.1718, 676.048 )
 
-[node name="Obstacles" parent="." index="2" instance=ExtResource( 6 )]
+[node name="Obstacles" parent="." index="2" instance=ExtResource( 7 )]
 
-[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 7 )]
+[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 8 )]
 
 position = Vector2( 124.83, 117.38 )
 width = 250
 
-[node name="Wall6" parent="Obstacles" index="5" instance=ExtResource( 7 )]
+[node name="Wall6" parent="Obstacles" index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 124.83, 346.856 )
 width = 250
 
-[node name="Wall7" parent="Obstacles" index="6" instance=ExtResource( 7 )]
+[node name="Wall7" parent="Obstacles" index="6" instance=ExtResource( 8 )]
 
 position = Vector2( 212.881, 234.249 )
 width = 250
 
-[node name="Wall8" parent="Obstacles" index="7" instance=ExtResource( 7 )]
+[node name="Wall8" parent="Obstacles" index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 212.881, 465 )
 width = 250
 
-[node name="Wall9" parent="Obstacles" index="8" instance=ExtResource( 7 )]
+[node name="Wall9" parent="Obstacles" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 353.212, 125.123 )
 height = 250
 
-[node name="Wall10" parent="Obstacles" index="9" instance=ExtResource( 7 )]
+[node name="Wall10" parent="Obstacles" index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 104, 595.201 )
 height = 250
 
-[node name="Wall11" parent="Obstacles" index="10" instance=ExtResource( 7 )]
+[node name="Wall11" parent="Obstacles" index="10" instance=ExtResource( 8 )]
 
 position = Vector2( 353.212, 356 )
 height = 250
 
-[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 8 )]
+[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 9 )]
 
 position = Vector2( 54.0255, 48.6916 )
 

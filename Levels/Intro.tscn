@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Intro.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=3]
-[ext_resource path="res://environment/Goal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=5]
-[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=7]
-[ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Map.wav" type="AudioStream" id=3]
+[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=8]
+[ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node2D"]
 
@@ -18,10 +19,12 @@ __meta__ = {
 LAUNCH_CODE_LENGTH = 3
 SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
+PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level1.tscn"
+BACKGROUND_MUSIC = ExtResource( 3 )
 
-[node name="TutorialText" parent="." index="0" instance=ExtResource( 3 )]
+[node name="TutorialText" parent="." index="0" instance=ExtResource( 4 )]
 
 margin_left = 283.0
 margin_top = 162.0
@@ -31,61 +34,61 @@ text = "Type: up/down/left/right/stop
 Hit: ENTER.
 ENTER to start."
 
-[node name="Goal" parent="." index="1" instance=ExtResource( 4 )]
+[node name="Goal" parent="." index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 1219.85, 549.328 )
 
-[node name="Obstacles" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Obstacles" parent="." index="2" instance=ExtResource( 6 )]
 
 editor/display_folded = true
 
-[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 6 )]
+[node name="Wall5" parent="Obstacles" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 1159.48, 599.236 )
 rotation = 0.785398
 width = 360
 
-[node name="Wall6" parent="Obstacles" index="5" instance=ExtResource( 6 )]
+[node name="Wall6" parent="Obstacles" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 1157.01, 356.713 )
 width = 270
 
-[node name="Wall8" parent="Obstacles" index="6" instance=ExtResource( 6 )]
+[node name="Wall8" parent="Obstacles" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 912, 412.521 )
 rotation = 1.5708
 width = 145
 
-[node name="Wall7" parent="Obstacles" index="7" instance=ExtResource( 6 )]
+[node name="Wall7" parent="Obstacles" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 970.172, 476.559 )
 width = 148
 
-[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 7 )]
+[node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 636.706, 540.448 )
 
-[node name="Tree" parent="." index="4" instance=ExtResource( 8 )]
+[node name="Tree" parent="." index="4" instance=ExtResource( 9 )]
 
 position = Vector2( 201.811, 431.362 )
 
-[node name="Tree2" parent="." index="5" instance=ExtResource( 8 )]
+[node name="Tree2" parent="." index="5" instance=ExtResource( 9 )]
 
 position = Vector2( 690.758, 100.305 )
 
-[node name="Tree3" parent="." index="6" instance=ExtResource( 8 )]
+[node name="Tree3" parent="." index="6" instance=ExtResource( 9 )]
 
 position = Vector2( 399.268, 548.744 )
 
-[node name="Tree4" parent="." index="7" instance=ExtResource( 8 )]
+[node name="Tree4" parent="." index="7" instance=ExtResource( 9 )]
 
 position = Vector2( 146.438, 153.268 )
 
-[node name="Tree5" parent="." index="8" instance=ExtResource( 8 )]
+[node name="Tree5" parent="." index="8" instance=ExtResource( 9 )]
 
 position = Vector2( 583.916, 440.492 )
 
-[node name="Tree6" parent="." index="9" instance=ExtResource( 8 )]
+[node name="Tree6" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 812.384, 318.214 )
 

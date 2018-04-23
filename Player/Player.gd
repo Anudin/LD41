@@ -72,5 +72,8 @@ func _on_animation_finished():
 
 
 func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
+	if area == null:
+		return
+	
 	if area.is_in_group("walls"):
 		reset_position = false

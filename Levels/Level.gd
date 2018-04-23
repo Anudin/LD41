@@ -8,6 +8,7 @@ export var SHOW_DIR_HINT = false
 export var PENETRATE_ENEMY = false
 export(PackedScene) var Movement
 export(String) var FOLLOWING_SCENE_PATH
+export(AudioStream) var BACKGROUND_MUSIC
 
 # Implement in each script
 func win_condition():
@@ -20,7 +21,7 @@ func save():
 func before():
 	pass
 
-func _ready():
+func _ready():	
 	$"/root/Main/Player/LeftMarker".visible = SHOW_DIR_HINT
 	$"/root/Main/Player/RightMarker".visible = SHOW_DIR_HINT
 	$"/root/Main/Player".change_movement(Movement.instance())

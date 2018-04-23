@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/EndLevel.gd" type="Script" id=1]
 [ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=4]
-[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://BossMain.wav" type="AudioStream" id=3]
+[ext_resource path="res://fonts/VT323-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI/TutorialText.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -31,10 +32,10 @@ tracks/0/keys = {
 size = 32
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -47,6 +48,7 @@ SHOW_DIR_HINT = false
 PENETRATE_ENEMY = true
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/EndLevel.tscn"
+BACKGROUND_MUSIC = ExtResource( 3 )
 
 [node name="ScoreAnimation" type="AnimationPlayer" parent="." index="0"]
 
@@ -99,7 +101,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="TutorialText" parent="." index="3" instance=ExtResource( 4 )]
+[node name="TutorialText" parent="." index="3" instance=ExtResource( 5 )]
 
 margin_left = 175.0
 margin_top = 125.0
@@ -121,66 +123,66 @@ editor/display_folded = true
 
 editor/display_folded = true
 
-[node name="Wall" parent="Obstacles/Limiter" index="0" instance=ExtResource( 5 )]
+[node name="Wall" parent="Obstacles/Limiter" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 640, -360 )
 width = 2560
 
-[node name="Wall2" parent="Obstacles/Limiter" index="1" instance=ExtResource( 5 )]
+[node name="Wall2" parent="Obstacles/Limiter" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 640, 1080 )
 width = 2560
 
-[node name="Wall3" parent="Obstacles/Limiter" index="2" instance=ExtResource( 5 )]
+[node name="Wall3" parent="Obstacles/Limiter" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( -640, 360 )
 height = 1472
 
-[node name="Wall4" parent="Obstacles/Limiter" index="3" instance=ExtResource( 5 )]
+[node name="Wall4" parent="Obstacles/Limiter" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 1920, 360 )
 height = 1472
 
-[node name="Wall" parent="Obstacles" index="1" instance=ExtResource( 5 )]
+[node name="Wall" parent="Obstacles" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 652.594, 704.148 )
 width = 256
 
-[node name="Wall2" parent="Obstacles" index="2" instance=ExtResource( 5 )]
+[node name="Wall2" parent="Obstacles" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 652.594, 15.7042 )
 width = 256
 
-[node name="Wall5" parent="Obstacles" index="3" instance=ExtResource( 5 )]
+[node name="Wall5" parent="Obstacles" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 1802.4, -234.656 )
 rotation = 0.785398
 width = 350
 
-[node name="Wall7" parent="Obstacles" index="4" instance=ExtResource( 5 )]
+[node name="Wall7" parent="Obstacles" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 1789.78, 952.875 )
 rotation = 2.35619
 width = 350
 
-[node name="Wall8" parent="Obstacles" index="5" instance=ExtResource( 5 )]
+[node name="Wall8" parent="Obstacles" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( -511.757, 952.875 )
 rotation = -2.35619
 width = 350
 
-[node name="Wall6" parent="Obstacles" index="6" instance=ExtResource( 5 )]
+[node name="Wall6" parent="Obstacles" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( -512.663, -234.656 )
 rotation = -0.785398
 width = 350
 
-[node name="Wall3" parent="Obstacles" index="7" instance=ExtResource( 5 )]
+[node name="Wall3" parent="Obstacles" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 1263.35, 363.124 )
 height = 256
 
-[node name="Wall4" parent="Obstacles" index="8" instance=ExtResource( 5 )]
+[node name="Wall4" parent="Obstacles" index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 15.981, 363.124 )
 height = 256
@@ -240,7 +242,7 @@ position = Vector2( -562.351, 1009.21 )
 
 position = Vector2( -566.163, -277.737 )
 
-[node name="PlayerSpawn" parent="." index="6" instance=ExtResource( 6 )]
+[node name="PlayerSpawn" parent="." index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 640, 360 )
 
