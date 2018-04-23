@@ -4,8 +4,9 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 
 # Necessary:
+# TODO: Short pause when dying
+# TODO: Score notification in final level
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
-# TODO: Win / Die notifications - at least in the last level.
 # TODO: Particles - trails!, smoke, blood etc.
 
 # Set player rotation on spawn

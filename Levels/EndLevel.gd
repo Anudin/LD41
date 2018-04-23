@@ -17,6 +17,7 @@ var waves = [
 [7, 999, 4, 5, .33, 3]
 ]
 
+# Replace timer with condition.
 func next_wave():
 	if wave < waves.size():
 		wave += 1
