@@ -10,7 +10,7 @@
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environment/Tree.tscn" type="PackedScene" id=9]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -26,12 +26,13 @@ BACKGROUND_MUSIC = ExtResource( 3 )
 
 [node name="TutorialText" parent="." index="0" instance=ExtResource( 4 )]
 
-margin_left = 283.0
-margin_top = 162.0
-margin_right = 1687.0
-margin_bottom = 363.0
+margin_left = 235.0
+margin_top = 33.0
+margin_right = 1639.0
+margin_bottom = 302.0
 text = "Type: up/down/left/right/stop
 Hit: ENTER.
+Try the same command multiple times...
 ENTER to start."
 
 [node name="Goal" parent="." index="1" instance=ExtResource( 5 )]
@@ -74,7 +75,7 @@ position = Vector2( 201.811, 431.362 )
 
 [node name="Tree2" parent="." index="5" instance=ExtResource( 9 )]
 
-position = Vector2( 690.758, 100.305 )
+position = Vector2( 590.547, 142.06 )
 
 [node name="Tree3" parent="." index="6" instance=ExtResource( 9 )]
 
@@ -82,7 +83,7 @@ position = Vector2( 399.268, 548.744 )
 
 [node name="Tree4" parent="." index="7" instance=ExtResource( 9 )]
 
-position = Vector2( 146.438, 153.268 )
+position = Vector2( 114.705, 153.268 )
 
 [node name="Tree5" parent="." index="8" instance=ExtResource( 9 )]
 

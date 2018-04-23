@@ -31,8 +31,10 @@ func _process(delta):
 	
 	if velocity != Vector2(0,0):
 		play("default")
+		$AudioEngineSound.play()
 	elif animation == "default":
 		stop()
+		$AudioEngineSound.stop()
 		
 	# Rotate labels so they face upside in case the player was moved
 	$RightMarker.global_rotation = 0
@@ -40,6 +42,7 @@ func _process(delta):
 
 func _on_text_command(command):
 	if command == "shoot":				
+		$AudioFireWeapon.play()
 		var bullet = Bullet.instance()
 		bullet.setup(direction)
 		bullet.position = position

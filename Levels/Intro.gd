@@ -6,7 +6,8 @@ var arrived = false
 var responses = [
 	"That might be a tree... I think.",
 	"At least they can't see your artistic\nskill in this resolution.",
-	"You could've at least included audio commentary."
+	"You could've at least included audio commentary.",
+	"Wait a second. I don't look like a walker."
 ] setget , get_responses
 
 func before():

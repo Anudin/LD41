@@ -24,6 +24,7 @@ func _on_animation_finished():
 func explode():
 	set_process(false)
 	Parent.z_index = -1
+	Parent.get_node("AudioStreamPlayer").play()
 	Parent.get_node("Shadow").hide()
 	Parent.get_node("AnimationPlayer").stop()
 	Parent.get_node("Area2D/CollisionShape2D").disabled = true
