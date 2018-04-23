@@ -7,7 +7,7 @@
 [ext_resource path="res://environment/Wall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "score_effect"
 length = 1.0
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 size = 32
 use_mipmaps = true
@@ -34,7 +34,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -55,7 +55,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/score_effect = SubResource( 2 )
+anims/score_effect = SubResource( 1 )
 blend_times = [  ]
 
 [node name="ScoreTimer" type="Timer" parent="." index="1"]
@@ -90,7 +90,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -184,8 +184,6 @@ position = Vector2( 15.981, 363.124 )
 height = 256
 
 [node name="Spawns" type="Node2D" parent="." index="5"]
-
-editor/display_folded = true
 
 [node name="Position2D" type="Position2D" parent="Spawns" index="0"]
 

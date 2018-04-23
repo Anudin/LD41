@@ -19,9 +19,13 @@ var waves = [
 [6, 3, 4, 5, 2, 5]
 ]
 
-func next_wave():
-	if wave < waves.size():
+func next_wave():	
+	if wave < waves.size() - 1:
 		wave += 1
+	
+	for spawn_position in $Spawns.get_children():
+		if spawn_position.get_children().size() != 0:
+			spawn_position.remove_child(spawn_position.get_child(0))
 	
 	load_wave()
 
