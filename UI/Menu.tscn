@@ -3,15 +3,18 @@
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://UI/menu_background.png" type="Texture" id=2]
 
-[node name="Menu" type="CanvasLayer"]
+[node name="Menu" type="CanvasLayer" index="0"]
 
+pause_mode = 2
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 selected = 0
+visible = true
 
 [node name="Background" type="Sprite" parent="." index="0"]
 

@@ -1,6 +1,29 @@
+tool
+
 extends CanvasLayer
 
 export(int) var selected = 0
+
+export var visible = true setget set_visible
+
+# Implement in child
+func set_child_visibility():
+	for child in get_children():
+		child.visible = visible
+
+func set_visible(value):
+	visible = value
+	set_child_visibility()
+
+func toggle_visibility():	
+	if visible:
+		visible = false
+		set_process_input(false)
+	else:
+		visible = true
+		set_process_input(true)
+	
+	set_child_visibility()
 
 # Implement in child
 func execute():
@@ -9,6 +32,9 @@ func execute():
 func _ready():
 	VisualServer.set_default_clear_color(Color(0, 0, 0, 1.0))
 	$Options.get_child(selected).get_node("Selected").show()
+	
+	if not visible:
+		set_process_input(false)
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

@@ -4,19 +4,28 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 
 # Necessary:
-# TODO: Pause (show tutorial)
+# FIXME: Enemy blood damaging player?
 # TODO: Plan, implement progression
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, smoke, blood etc.
 
 # Post LD / if there is time:
-# TODO: Main menu: difficulty
+# Main menu: difficulty
+# Pause menu: show tutorial
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
 
 var continue_game
 var level_path
+
+func pause():
+	$PauseMenu.toggle_visibility()
+	get_tree().paused = true
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		pause()
 
 func _ready():
 	randomize()
@@ -26,7 +35,8 @@ func _ready():
 	if continue_game:
 		game_loaded = load_game()
 	if not game_loaded:
-		change_level("res://Levels/Intro.tscn")
+		# TODO: Change to correct value
+		change_level("res://Levels/Level2.tscn")
 		
 	
 	_on_queue_updated([])

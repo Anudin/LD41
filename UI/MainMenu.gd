@@ -23,11 +23,10 @@ func execute():
 			continue_game = true
 		
 		var root = $"/root"
-		root.remove_child($"/root/Menu")
+		root.remove_child($"/root/StartMenu")
 		main.setup(continue_game)
 		root.add_child(main)
 		queue_free()
 	elif selected == 2:
-		print("audio toggled")
 		emit_signal("play_audio", false)
 			
