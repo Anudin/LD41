@@ -4,7 +4,6 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 
 # Necessary:
-# FIXME: Enemy blood damaging player?
 # TODO: Plan, implement progression
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, smoke, blood etc.
@@ -38,7 +37,7 @@ func _ready():
 		game_loaded = load_game()
 	if not game_loaded:
 		# TODO: Change to correct value
-		change_level("res://Levels/Level2.tscn")
+		change_level("res://Levels/Level2.tscn", {"skip_tutorial": true})
 		
 	
 	_on_queue_updated([])
