@@ -1,7 +1,7 @@
 extends Node2D
 
 # Next LD:
-# State management...
+# State management... (scene switching, menus, ...)
 # Better composition handling (also with regard towards state)
 # Naming conventions
 # Project structure
@@ -12,7 +12,6 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 
 # Necessary:
-# TODO: Score notification in final level
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, smoke, blood etc.
 

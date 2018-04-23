@@ -35,6 +35,9 @@ func load_wave():
 	SLOWMOTION_MODIFIER = waves[wave][4]
 	LAUNCH_CODE_LENGTH = waves[wave][5]
 
+func after():
+	OS.set_window_title(str(score))
+
 func increase_score():
 	score += 5
 	$ScoreLayer/Score.text = str(score)
