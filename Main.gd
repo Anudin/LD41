@@ -9,6 +9,8 @@ extends Node2D
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, smoke, blood etc.
 
+# Fix second "enter" to use pause screen
+
 # Post LD / if there is time:
 # Main menu: difficulty
 # Pause menu: show tutorial

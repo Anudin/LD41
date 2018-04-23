@@ -57,9 +57,9 @@ func _input(event):
 	
 	toggle_selected(selected)
 	
-	if event.is_action_pressed("ui_up"):
+	if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_left"):
 		selected = clamp(selected - 1, 0, $Options.get_child_count() - 1)
-	if event.is_action_pressed("ui_down"):
+	if event.is_action_pressed("ui_down") or event.is_action_pressed("ui_right"):
 		selected = clamp(selected + 1, 0, $Options.get_child_count() - 1)
 	
 	$Options.get_child(selected).get_node("Selected").show()
