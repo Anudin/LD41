@@ -3,10 +3,12 @@ extends Node2D
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 
-# TODO: Plan, implement progression
+# Necessary:
 # TODO: Main, Pause (show tutorial), death... menu - New Game, Continue, Controls maybe difficulty setting
-
+# TODO: Plan, implement progression
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
+
+# Nice to have:
 # TODO: Particles - trails!, blood, smoke etc.
 
 var COMMANDS = []
