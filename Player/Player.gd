@@ -11,6 +11,7 @@ var velocity = Vector2(0,0)
 var last_position
 
 var health = 100
+var dead = false
 
 func _ready():
 	emit_signal("health_changed", health)
@@ -21,7 +22,7 @@ func _process(delta):
 	
 	if velocity != Vector2(0,0):
 		play("default")
-	else:
+	elif animation == "default":
 		stop()
 		
 	# Rotate labels so they face upside in case the player was moved
@@ -38,6 +39,11 @@ func _on_text_command(command):
 func _on_hit():
 	health -= 25
 	emit_signal("health_changed", health)
+	
+	if health <= 0:
+		dead = true
+		velocity = Vector2(0,0)
+		play("explode")
 
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):	
 	if area.is_in_group("walls"):
@@ -50,3 +56,7 @@ func change_movement(movement):
 		remove_child($Movement)
 	
 	add_child(movement)
+
+func _on_animation_finished():
+	if dead and animation == "explode":
+		$"/root/Main".player_died()

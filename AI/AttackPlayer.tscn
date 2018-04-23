@@ -2,7 +2,7 @@
 
 [ext_resource path="res://AI/AttackPlayer.gd" type="Script" id=1]
 
-[node name="AttackPlayer" type="Node" index="0"]
+[node name="AttackPlayer" type="Node"]
 
 script = ExtResource( 1 )
 

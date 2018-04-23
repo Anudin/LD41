@@ -4,7 +4,7 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 
 # Necessary:
-# TODO: Short pause when dying
+# FIXME: Can run through walls
 # TODO: Score notification in final level
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, smoke, blood etc.
@@ -92,11 +92,11 @@ func update_temp_commands_display():
 	$UI/CommandMapping.text = command_display
 
 func _on_health_changed(health):	
-	if health > 0:
-		$UI/PlayerHealth.value = health
-	else:
-		call_deferred("restart_game")
-		
+	$UI/PlayerHealth.value = clamp(health, 0, 100)
+
+func player_died():
+	call_deferred("restart_game")
+
 func restart_game():
 	save_game()
 	

@@ -8,12 +8,13 @@
 [ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=7]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
 SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
+PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level2.tscn"
 

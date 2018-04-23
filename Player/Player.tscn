@@ -1,15 +1,25 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Player/player0.png" type="Texture" id=1]
-[ext_resource path="res://Player/player1.png" type="Texture" id=2]
-[ext_resource path="res://Player/Player.gd" type="Script" id=3]
-[ext_resource path="res://Player/right_marker.png" type="Texture" id=4]
-[ext_resource path="res://Player/left_marker.png" type="Texture" id=5]
+[ext_resource path="res://AI/explosion0.png" type="Texture" id=1]
+[ext_resource path="res://AI/explosion1.png" type="Texture" id=2]
+[ext_resource path="res://AI/explosion2.png" type="Texture" id=3]
+[ext_resource path="res://AI/explosion3.png" type="Texture" id=4]
+[ext_resource path="res://AI/explosion4.png" type="Texture" id=5]
+[ext_resource path="res://Player/player0.png" type="Texture" id=6]
+[ext_resource path="res://Player/player1.png" type="Texture" id=7]
+[ext_resource path="res://Player/Player.gd" type="Script" id=8]
+[ext_resource path="res://Player/right_marker.png" type="Texture" id=9]
+[ext_resource path="res://Player/left_marker.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "explode",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -20,14 +30,14 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 4.02826, 7.48546 )
 
-[node name="Player" type="AnimatedSprite"]
+[node name="Player" type="AnimatedSprite" index="0"]
 
 scale = Vector2( 4, 4 )
 z_index = 1
 frames = SubResource( 1 )
 animation = "default"
 offset = Vector2( 0, 2 )
-script = ExtResource( 3 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
@@ -52,14 +62,14 @@ shape = SubResource( 2 )
 
 modulate = Color( 0.847656, 0.205292, 0.205292, 1 )
 position = Vector2( -5.0389, 9.92342 )
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="LeftMarker" type="Sprite" parent="." index="2"]
 
 modulate = Color( 0.847059, 0.203922, 0.203922, 1 )
 position = Vector2( 5.20377, 9.93085 )
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
@@ -87,6 +97,8 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Transform", "Visibility" ]
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_shape_entered"]
 

@@ -23,6 +23,7 @@ script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
 SLOWMOTION_MODIFIER = 0.33
 SHOW_DIR_HINT = false
+PENETRATE_ENEMY = false
 Movement = ExtResource( 2 )
 FOLLOWING_SCENE_PATH = "res://Levels/Level3.tscn"
 
@@ -40,7 +41,9 @@ I was in your position. Poor bastard.
 Try to enter a command and hit Space.
 You can queue up to 3 commands and
 execute them one by one with Space.
-Use this to get to the goal."
+Use this to get to the goal.
+
+Tip: Delete queue with Backspace."
 
 [node name="Goal" parent="." index="1" instance=ExtResource( 5 )]
 
