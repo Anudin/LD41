@@ -17,13 +17,10 @@ extends Node2D
 # TODO: Particles - trails!, smoke, blood etc.
 
 # Set player rotation on spawn
-# Use camera
-# Fix second "enter" to use pause screen
+# Fix second "enter" to use pause screen - pause screen only works in 1,2,end
 
 # Post LD / if there is time:
 # Main menu: difficulty
-# Pause menu: show tutorial
-# Check savegame version
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
@@ -35,9 +32,9 @@ var level_path
 
 func toggle_audio():	
 	if play_audio:
-		play_audio = false
+		AudioServer.set_bus_volume_db(0, -60)
 	else:
-		play_audio = true
+		AudioServer.set_bus_volume_db(0, -3)
 
 func pause():
 	$PauseMenu.toggle_visibility()
