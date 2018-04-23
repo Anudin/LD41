@@ -35,7 +35,7 @@ func _on_text_command(command):
 		
 		# Direct change of direction
 		if sign(Player.velocity.x) != sign(Player.direction.x) or \
-		sign(Player.velocity.x) != sign(Player.direction.x) :
+		sign(Player.velocity.y) != sign(Player.direction.y) :
 			Player.velocity = Vector2(0,0)			
 		
 		Player.velocity += Player.direction * Player.SPEED_MODIFIER
