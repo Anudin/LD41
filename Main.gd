@@ -7,19 +7,13 @@ extends Node2D
 # Project structure
 # Boolean toggle helper
 # Save settings as soon as they're set and load from file.
+# TODO: Particles - trails!, smoke, blood etc.
 
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
 
-# Necessary:
-# TODO: Sound [Warn sound, shot, explosion, typing, moving?]
-# TODO: Particles - trails!, smoke, blood etc.
-
-# Set player rotation on spawn
 # Fix second "enter" to use pause screen - pause screen only works in 1,2,end
-
-# Post LD / if there is time:
 # Main menu: difficulty
 
 var COMMANDS = []
