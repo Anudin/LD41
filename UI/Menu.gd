@@ -26,7 +26,7 @@ func toggle_selected(index):
 func _input(event):
 	if not event is InputEventKey:
 		return
-	elif event.is_action("ui_accept"):
+	elif event.is_action_pressed("ui_accept"):
 		execute()
 	
 	toggle_selected(selected)
