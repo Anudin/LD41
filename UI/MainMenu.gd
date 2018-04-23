@@ -1,8 +1,6 @@
 extends "res://UI/Menu.gd"
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var Main = preload("res://Main.tscn")
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -14,5 +12,16 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func execute():
-	print(selected)
+func execute():	
+	var main = Main.instance()
+	
+	match selected:
+		0:
+			main.setup(true)
+		1:
+			main.setup()
+	
+	var root = $"/root"
+	root.remove_child($"/root/Menu")
+	root.add_child(main)
+	queue_free()

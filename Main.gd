@@ -14,18 +14,28 @@ extends Node2D
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
 
+var continue_game
 var level_path
 
 func _ready():
 	randomize()
 	
-	change_level("res://Levels/Intro.tscn")
-	#load_game()
+	var game_loaded = false
+	
+	if continue_game:
+		game_loaded = load_game()
+	if not game_loaded:
+		change_level("res://Levels/Intro.tscn")
+		
+	
 	_on_queue_updated([])
 	update_temp_commands(TEMP_COMMANDS.keys()[0])
 
-func _process(delta):
-	pass
+func setup(continue_game = false):
+	self.continue_game = continue_game
+
+#func _process(delta):
+#	pass
 
 func verify_command(command):
 	if COMMANDS.has(command):
@@ -94,9 +104,9 @@ func change_level(path, args = null):
 	
 	save_game()
 		
-func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		save_game()
+#func _notification(what):
+#	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+#		save_game()
 
 func save_game():
 	var variables = $Level/Level.save()
@@ -112,8 +122,7 @@ func load_game():
 	save_file.open("user://ld41.save", File.READ)
 	
 	if not save_file.file_exists("user://ld41.save"):
-		change_level("res://Levels/Level1.tscn")
-		return
+		return false
 	else:
 		var data = parse_json(save_file.get_line())
 		var level = data["level"]
@@ -123,3 +132,5 @@ func load_game():
 		change_level(level, args)
 	
 	save_file.close()
+	
+	return true

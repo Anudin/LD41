@@ -13,7 +13,7 @@ func _process(delta):
 	pass
 
 func _input(event):
-	if event.is_action("strict_accept"):
+	if event.is_action_pressed("strict_accept"):
 		played = true
 		hide()
 		get_tree().paused = false

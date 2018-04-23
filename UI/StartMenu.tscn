@@ -26,6 +26,7 @@ text = "New Game"
 
 [node name="Controls" parent="." index="2" instance=ExtResource( 3 )]
 
+visible = false
 margin_left = 527.0
 margin_top = 379.0
 margin_right = 769.0
