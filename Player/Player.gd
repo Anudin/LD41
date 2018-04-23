@@ -11,12 +11,17 @@ var velocity = Vector2(0,0)
 var last_position
 
 var health = 100
+var reset_position = false
 var dead = false
 
 func _ready():
 	emit_signal("health_changed", health)
 
 func _process(delta):
+	while(reset_position and $Area2D.get_overlapping_areas().size() != 0):
+		position -= direction
+		return
+	
 	last_position = position
 	position += velocity * delta
 	
@@ -47,8 +52,8 @@ func _on_hit():
 
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):	
 	if area.is_in_group("walls"):
-		position = last_position
 		velocity = Vector2(0,0)
+		reset_position = true
 
 func change_movement(movement):
 	if has_node("Movement"):
@@ -60,3 +65,8 @@ func change_movement(movement):
 func _on_animation_finished():
 	if dead and animation == "explode":
 		$"/root/Main".player_died()
+
+
+func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
+	if area.is_in_group("walls"):
+		reset_position = false

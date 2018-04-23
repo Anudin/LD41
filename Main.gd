@@ -1,10 +1,15 @@
 extends Node2D
 
+# Next LD:
+# State management...
+# Better composition handling (also with regard towards state)
+# Naming conventions
+# Project structure
+
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 
 # Necessary:
-# FIXME: Can run through walls
 # TODO: Score notification in final level
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, smoke, blood etc.
