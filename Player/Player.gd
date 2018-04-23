@@ -10,9 +10,13 @@ var direction = Vector2(0,1)
 var velocity = Vector2(0,0)
 var last_position
 
-var health = 100
+var health = 100 setget set_health
 var reset_position = false
 var dead = false
+
+func set_health(value):
+	health = value
+	emit_signal("health_changed", health)
 
 func _ready():
 	emit_signal("health_changed", health)

@@ -12,7 +12,7 @@ signal play_audio
 #		child.visible = visible
 
 func _ready():
-	pass
+	connect("play_audio", $"/root/Main", "toggle_audio")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -23,5 +23,5 @@ func execute():
 	if selected == 0:
 		toggle_visibility()
 		get_tree().paused = false
-	elif selected == 2:
-		emit_signal("play_audio", false)
+	elif selected == 1:
+		emit_signal("play_audio")

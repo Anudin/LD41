@@ -5,6 +5,8 @@ extends Node2D
 # Better composition handling (also with regard towards state)
 # Naming conventions
 # Project structure
+# Boolean toggle helper
+# Save settings as soon as they're set and load from file.
 
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
@@ -26,8 +28,16 @@ extends Node2D
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
 
+var play_audio = true
+
 var continue_game
 var level_path
+
+func toggle_audio():	
+	if play_audio:
+		play_audio = false
+	else:
+		play_audio = true
 
 func pause():
 	$PauseMenu.toggle_visibility()
@@ -107,6 +117,7 @@ func restart_game():
 	
 	var main = load("res://Main.tscn").instance()
 	main.continue_game = true
+	main.play_audio = play_audio
 	
 	var root = $"/root"
 	root.remove_child($"/root/Main")

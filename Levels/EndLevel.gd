@@ -44,6 +44,7 @@ func save():
 	return {"skip_tutorial": $TutorialText.played}
 
 func before():
+	$"/root/Main/Player".health = 100
 	$"/root/Main/Player/Camera2D".current = true
 	
 	if skip_tutorial:

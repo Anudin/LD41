@@ -5,9 +5,7 @@ signal play_audio
 var Main = preload("res://Main.tscn")
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	pass#connect("play_audio", $"/root/Main", "toggle_audio")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
