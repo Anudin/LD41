@@ -9,7 +9,7 @@ extends Node2D
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 
 # Nice to have:
-# TODO: Particles - trails!, blood, smoke etc.
+# TODO: Particles - trails!, smoke, blood etc.
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}

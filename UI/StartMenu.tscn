@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/Menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://UI/MenuEntry.tscn" type="PackedScene" id=3]
+
+[node name="Menu" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Continue" parent="." index="0" instance=ExtResource( 3 )]
+
+margin_left = 527.0
+margin_top = 259.0
+margin_right = 769.0
+margin_bottom = 314.0
+text = "Continue"
+
+[node name="NewGame" parent="." index="1" instance=ExtResource( 3 )]
+
+margin_left = 527.0
+margin_top = 319.0
+margin_right = 769.0
+margin_bottom = 374.0
+text = "New Game"
+
+[node name="Controls" parent="." index="2" instance=ExtResource( 3 )]
+
+margin_left = 527.0
+margin_top = 379.0
+margin_right = 769.0
+margin_bottom = 434.0
+text = "Controls"
+
+

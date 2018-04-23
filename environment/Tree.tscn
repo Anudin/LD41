@@ -36,7 +36,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 44.3214, 48.7315 )
 
-[node name="Tree" type="Area2D" index="0"]
+[node name="Tree" type="Area2D"]
 
 pause_mode = 2
 input_pickable = true
