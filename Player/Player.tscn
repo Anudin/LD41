@@ -63,10 +63,11 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
+visible = false
 anchor_mode = 1
 rotating = false
-current = true
-zoom = Vector2( 1.25, 1.25 )
+current = false
+zoom = Vector2( 1.5, 1.5 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000

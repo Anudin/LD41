@@ -39,17 +39,15 @@ width = 224
 
 [node name="Spawns" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
-
 [node name="Spawn" parent="Spawns" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 108.386, 623.712 )
-MAX = 2
+MAX = 1
 
 [node name="Spawn2" parent="Spawns" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 1158.27, 623.712 )
-MAX = 2
+MAX = 1
 
 [node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 6 )]
 

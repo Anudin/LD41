@@ -7,6 +7,8 @@ extends Node2D
 # TODO: Sound [Warn sound, shot, explosion, typing, moving?]
 # TODO: Particles - trails!, smoke, blood etc.
 
+# Set player rotation on spawn
+# Use camera
 # Fix second "enter" to use pause screen
 
 # Post LD / if there is time:
@@ -37,8 +39,7 @@ func _ready():
 		game_loaded = load_game()
 	if not game_loaded:
 		# TODO: Change to correct value
-		change_level("res://Levels/Level2.tscn")
-		
+		change_level("res://Levels/Level4.tscn")
 	
 	_on_queue_updated([])
 	update_temp_commands(TEMP_COMMANDS.keys()[0])

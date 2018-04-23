@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/Level4.gd" type="Script" id=1]
+[ext_resource path="res://Player/AbsoluteMovement.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/WindowBounds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=5]
+
+[node name="Level" type="Node2D"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+LAUNCH_CODE_LENGTH = 3
+SLOWMOTION_MODIFIER = 0.33
+SHOW_DIR_HINT = false
+Movement = ExtResource( 2 )
+FOLLOWING_SCENE_PATH = "res://Levels/Level5.tscn"
+
+[node name="Obstacles" parent="." index="0" instance=ExtResource( 3 )]
+
+[node name="Spawns" type="Node2D" parent="." index="1"]
+
+[node name="Spawn2" parent="Spawns" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 640, 623.712 )
+SPAWN_SPEED_SECS = 4.0
+MAX = 3
+
+[node name="Spawn4" parent="Spawns" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 1199.93, 74.2202 )
+SPAWN_SPEED_SECS = 4.0
+MAX = 3
+
+[node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 83.8275, 73.2767 )
+DESTROYABLE = true
+SPAWN_SPEED_SECS = 4.0
+MAX = 3
+
+[node name="PlayerSpawn" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 640, 360 )
+
+[node name="AI" type="Node2D" parent="." index="3"]
+
+
