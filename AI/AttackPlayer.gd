@@ -33,11 +33,6 @@ func explode():
 	Parent.rotate(deg2rad(randi()%135-90))
 	Parent.play("explode")
 
-# TODO: Remove dev cheat
-func _input(event):
-	if event is InputEventKey and event.scancode == KEY_F1:
-		explode()
-
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 	match self_shape:
 		Parent.collider_id:

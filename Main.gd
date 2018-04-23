@@ -46,7 +46,6 @@ func _ready():
 	if continue_game:
 		game_loaded = load_game()
 	if not game_loaded:
-		# TODO: Change to correct value
 		change_level("res://Levels/Intro.tscn")
 	
 	_on_queue_updated([])
