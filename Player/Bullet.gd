@@ -19,8 +19,8 @@ func _process(delta):
 func _on_screen_exited():
 	queue_free()
 
-func _on_area_shape_entered(area_id, area, area_shape, self_shape):	
-	if (area.get_parent().is_in_group("enemies") and area_shape == area.get_parent().collider_id and not penetrate_enemy) or \
+func _on_area_shape_entered(area_id, area, area_shape, self_shape):
+	if (area.is_in_group("enemies") and area_shape == area.collider_id and not penetrate_enemy) or \
 	area.is_in_group("walls") or \
 	area.get_parent().is_in_group("enemy_spawn"):
 		$Area2D/CollisionShape2D.disabled = true
