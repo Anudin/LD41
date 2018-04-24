@@ -27,14 +27,14 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 14.035, 14.1329 )
+extents = Vector2( 16.4653, 16.9612 )
 
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 41.919
 
-[node name="AI" type="Area2D" groups=[
+[node name="AI" type="Area2D" index="0" groups=[
 "enemies",
 ]]
 
