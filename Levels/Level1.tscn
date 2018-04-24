@@ -9,7 +9,7 @@
 [ext_resource path="res://Spawns/Spawn.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Spawns/PlayerSpawn.tscn" type="PackedScene" id=8]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 LAUNCH_CODE_LENGTH = 3
@@ -55,7 +55,6 @@ MAX = 1
 [node name="Spawn3" parent="Spawns" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 640, 537.589 )
-DESTROYABLE = true
 MAX = 1
 
 [node name="PlayerSpawn" parent="." index="3" instance=ExtResource( 8 )]

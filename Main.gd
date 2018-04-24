@@ -14,8 +14,8 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
 
-# Contrast
 # Highscore
+# Contrast
 # Level transitions
 # Difficulty setting
 # Save audio settings
