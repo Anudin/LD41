@@ -1,13 +1,11 @@
-extends AnimatedSprite
+extends Area2D
 
-onready var collider_id = $Area2D/CollisionShape2D.get_position_in_parent()
-onready var explosion_trigger_id = $Area2D/ExplosionTrigger.get_position_in_parent()
+onready var collider_id = 0
+onready var explosion_trigger_id = 1
 
 var alive = true
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
 #func _process(delta):	
