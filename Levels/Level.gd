@@ -11,6 +11,7 @@ export(String) var FOLLOWING_SCENE_PATH
 export(AudioStream) var BACKGROUND_MUSIC
 
 var restart_game = false
+var after_executed = false
 
 # ABSTRACT
 func save():
@@ -21,6 +22,10 @@ func before():
 
 func after():
 	pass
+
+func call_after():
+	after()
+	after_executed = true
 
 func delete():
 	queue_free()
@@ -42,8 +47,14 @@ func _on_player_died():
 
 func _process(delta):
 	if win_condition():
-		after()
-		emit_signal("level_finished", FOLLOWING_SCENE_PATH)
+		if not after_executed:
+			call_deferred("call_after")
+		else:
+			emit_signal("level_finished", FOLLOWING_SCENE_PATH)
 	elif restart_game:
-		after()
-		$"/root/Main".call_deferred("restart_game")
+		if not after_executed:
+			print("restart executed - calling after")
+			call_deferred("call_after")
+		else:
+			print("execute rest")
+			$"/root/Main".call_deferred("restart_game")

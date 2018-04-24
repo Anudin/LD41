@@ -37,9 +37,13 @@ func load_wave():
 	LAUNCH_CODE_LENGTH = waves[wave][5]
 
 func after():
-	OS.set_window_title("Last Score: " + str(score))
+	print("after called")
+	$ScoreDisplay/Alignment/Score.text = str(score)
+	$ScoreDisplay.toggle_visibility()
+	get_tree().paused = true
+	print("after executed")
 
-func _on_ai_died():
+func _on_ai_killed():
 	increase_score()
 
 func increase_score():

@@ -1,5 +1,6 @@
 extends Node
 
+signal killed
 signal died
 
 onready var Player = $"/root/Main/Player"
@@ -8,8 +9,11 @@ onready var Parent = get_parent()
 var last_position = Vector2(0,0)
 var speed = 30
 
+var killed = false
+
 func _ready():
 	connect("died", $"../../..", "_on_ai_died")
+	connect("killed", $"../../..", "_on_ai_killed")
 
 func _physics_process(delta):
 	var angle_to_player = rad2deg(Parent.get_angle_to(Player.position))
@@ -24,6 +28,9 @@ func _on_animation_finished():
 	if Parent.get_node("Body").animation == "explode":
 		Parent.alive = false
 		emit_signal("died")
+		
+		if killed:
+			emit_signal("killed")
 
 # Switch on animation finish
 func explode():
@@ -43,6 +50,7 @@ func explode():
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 	match self_shape:
 		Parent.collider_id:
+			killed = true
 			explode()
 		Parent.explosion_trigger_id:
 			if area != Player:

@@ -14,11 +14,13 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
 
-# Highscore
+# LD:
 # Contrast
-# Level transitions
 # Difficulty setting
 # Save audio settings
+
+# Post LD:
+# Level transitions
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
