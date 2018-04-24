@@ -39,7 +39,7 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 		Parent.collider_id:
 			explode()
 		Parent.explosion_trigger_id:
-			if area != Player.get_node("Area2D"):
+			if area != Player:
 				return
 			
 			explode()

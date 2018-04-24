@@ -32,9 +32,13 @@ func _ready():
 	$"/root/Main/Player/RightMarker".visible = SHOW_DIR_HINT
 	$"/root/Main/Player".change_movement(Movement.instance())
 	
+	$"/root/Main/Player".connect("player_died", self, "_on_player_died")
 	connect("level_finished", $"/root/Main", "change_level")
 	
 	before()
+
+func _on_player_died():
+	$"/root/Main".player_died()
 
 func after():
 	queue_free()

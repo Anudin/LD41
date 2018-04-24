@@ -1,6 +1,7 @@
 extends Area2D
 
 signal health_changed
+signal player_died
 
 var Bullet = preload("res://Player/Bullet.tscn")
 
@@ -72,7 +73,7 @@ func change_movement(movement):
 
 func _on_animation_finished():
 	if dead and $Body.animation == "explode":
-		$"/root/Main".player_died()
+		emit_signal("player_died")
 
 
 func _on_area_shape_exited(area_id, area, area_shape, self_shape):
