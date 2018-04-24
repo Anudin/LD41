@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends Area2D
 
 signal health_changed
 
@@ -23,10 +23,10 @@ func _ready():
 
 func _process(delta):
 	if velocity != Vector2(0,0):
-		play("default")
+		$Body.play("default")
 		$AudioEngineSound.play()
-	elif animation == "default":
-		stop()
+	elif $Body.animation == "default":
+		$Body.stop()
 		$AudioEngineSound.stop()
 		
 	# Rotate labels so they face upside in case the player was moved
@@ -34,7 +34,7 @@ func _process(delta):
 	$LeftMarker.global_rotation = 0
 
 func _physics_process(delta):
-	while(reset_position and $Area2D.get_overlapping_areas().size() != 0):
+	while(reset_position and get_overlapping_areas().size() != 0):
 		position -= direction
 		return
 	
@@ -56,7 +56,7 @@ func _on_hit():
 	if health <= 0:
 		dead = true
 		velocity = Vector2(0,0)
-		play("explode")
+		$Body.play("explode")
 
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):	
 	if area.is_in_group("walls"):
@@ -71,11 +71,11 @@ func change_movement(movement):
 	add_child(movement)
 
 func _on_animation_finished():
-	if dead and animation == "explode":
+	if dead and $Body.animation == "explode":
 		$"/root/Main".player_died()
 
 
-func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
+func _on_area_shape_exited(area_id, area, area_shape, self_shape):
 	if area == null:
 		return
 	

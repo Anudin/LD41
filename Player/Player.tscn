@@ -1,49 +1,32 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://AI/explosion0.png" type="Texture" id=1]
-[ext_resource path="res://AI/explosion1.png" type="Texture" id=2]
-[ext_resource path="res://AI/explosion2.png" type="Texture" id=3]
-[ext_resource path="res://AI/explosion3.png" type="Texture" id=4]
-[ext_resource path="res://AI/explosion4.png" type="Texture" id=5]
-[ext_resource path="res://Player/player0.png" type="Texture" id=6]
-[ext_resource path="res://Player/player1.png" type="Texture" id=7]
-[ext_resource path="res://Player/Player.gd" type="Script" id=8]
-[ext_resource path="res://sfx_wpn_cannon5.wav" type="AudioStream" id=9]
-[ext_resource path="res://Player/right_marker.png" type="Texture" id=10]
-[ext_resource path="res://Player/left_marker.png" type="Texture" id=11]
-
-[sub_resource type="SpriteFrames" id=1]
-
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "explode",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://sfx_wpn_cannon5.wav" type="AudioStream" id=2]
+[ext_resource path="res://Player/animations.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Player/right_marker.png" type="Texture" id=4]
+[ext_resource path="res://Player/left_marker.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 4.02826, 7.48546 )
+extents = Vector2( 14.8737, 27.1864 )
 
-[node name="Player" type="AnimatedSprite"]
+[node name="Player" type="Area2D" index="0"]
 
-scale = Vector2( 4, 4 )
 z_index = 1
-frames = SubResource( 1 )
-animation = "default"
-offset = Vector2( 0, 2 )
-script = ExtResource( 8 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="AudioFireWeapon" type="AudioStreamPlayer" parent="." index="0"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 2 )
 volume_db = -3.0
 autoplay = false
 mix_target = 0
@@ -57,37 +40,29 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="Body" type="AnimatedSprite" parent="." index="2"]
 
-editor/display_folded = true
-position = Vector2( 0.0863914, 0.712502 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-
-position = Vector2( -0.0484276, 0.67799 )
-shape = SubResource( 2 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 3 )
+animation = "default"
+offset = Vector2( 0, 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="RightMarker" type="Sprite" parent="." index="3"]
 
 modulate = Color( 0.847656, 0.205292, 0.205292, 1 )
-position = Vector2( -5.0389, 9.92342 )
-texture = ExtResource( 10 )
-_sections_unfolded = [ "Visibility" ]
+position = Vector2( -21.6868, 43.4571 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="LeftMarker" type="Sprite" parent="." index="4"]
 
 modulate = Color( 0.847059, 0.203922, 0.203922, 1 )
-position = Vector2( 5.20377, 9.93085 )
-texture = ExtResource( 11 )
-_sections_unfolded = [ "Visibility" ]
+position = Vector2( 20.4247, 43.4645 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 
@@ -115,10 +90,16 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Drag Margin", "Transform", "Visibility" ]
 
-[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
 
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_shape_entered"]
+position = Vector2( 0.0379638, 5.99987 )
+scale = Vector2( 1, 1.06603 )
+shape = SubResource( 2 )
 
-[connection signal="area_shape_exited" from="Area2D" to="." method="_on_Area2D_area_shape_exited"]
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
+
+[connection signal="animation_finished" from="Body" to="." method="_on_animation_finished"]
 
 

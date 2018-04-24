@@ -34,7 +34,7 @@ extents = Vector2( 9.93924, 9.80727 )
 custom_solver_bias = 0.0
 radius = 41.919
 
-[node name="AI" type="Area2D" index="0" groups=[
+[node name="AI" type="Area2D" groups=[
 "enemies",
 ]]
 
@@ -82,7 +82,6 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 4, 4 )
 frames = ExtResource( 5 )
 animation = "default"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

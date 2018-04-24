@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends Area2D
 
 export var DESTROYABLE = false
 export var SPAWN_SPEED_SECS = 2.5
@@ -16,7 +16,7 @@ func _ready():
 	$Timer.wait_time = SPAWN_SPEED_SECS
 	
 	if not DESTROYABLE:
-		$Area2D.disconnect("area_entered", self, "_on_area_entered")
+		disconnect("area_entered", self, "_on_area_entered")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -28,7 +28,7 @@ func _on_timeout():
 		$Timer.stop()
 		return
 	
-	play("open")
+	$Body.play("open")
 	var spawn = AI.instance()
 	spawn.position = global_position
 	$"/root/Main/Level/Level/AI".add_child(spawn)
@@ -42,12 +42,12 @@ func destroy():
 	$Timer.stop()
 	z_index = -1
 	destroyed = true
-	play("explode")
+	$Body.play("explode")
 	set_process(false)
 
 func _on_animation_finished():
 	if not destroyed:
-		play("default")
+		$Body.play("default")
 	else:
 		queue_free()
 		get_parent().remove_child(self)
