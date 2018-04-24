@@ -8,12 +8,12 @@ extends Node2D
 # Boolean toggle helper
 # Particles - trails!, smoke, blood etc.
 # Use input mapping
+# Global message propagation
 
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
 
-# Update score to waves!
 # Contrast
 # Highscore
 # Level transitions

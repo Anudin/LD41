@@ -39,6 +39,9 @@ func load_wave():
 func after():
 	OS.set_window_title("Last Score: " + str(score))
 
+func _on_ai_died():
+	increase_score()
+
 func increase_score():
 	score += 5
 	$ScoreLayer/Score.text = str(score)
