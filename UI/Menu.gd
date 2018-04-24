@@ -6,7 +6,9 @@ export(int) var selected = 0
 
 export var visible = true setget set_visible
 
-# Implement in child
+# ABSTRACT
+func execute():
+	pass
 func set_child_visibility():
 	for child in get_children():
 		child.visible = visible
@@ -24,10 +26,6 @@ func toggle_visibility():
 		set_process_input(true)
 	
 	set_child_visibility()
-
-# Implement in child
-func execute():
-	pass
 
 func _ready():
 	VisualServer.set_default_clear_color(Color(0, 0, 0, 1.0))
@@ -50,6 +48,8 @@ func toggle_selected(index):
 		option.get_node("Selected").hide()
 
 func _input(event):
+	print("Menu received input", event, event.is_pressed(), event.is_echo(), event.is_action("ui_accept"))
+	
 	if not event is InputEventKey:
 		return
 	elif event.is_action_pressed("ui_accept"):

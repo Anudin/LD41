@@ -164,7 +164,6 @@ position = Vector2( 640, 360 )
 
 [node name="PauseMenu" parent="." index="6" instance=ExtResource( 7 )]
 
-pause_mode = 0
 layer = 2
 
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
