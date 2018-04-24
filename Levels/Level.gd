@@ -35,7 +35,6 @@ func _ready():
 	before()
 
 func _on_player_died():
-	after()
 	restart_game = true
 
 func _process(delta):

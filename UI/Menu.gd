@@ -9,6 +9,7 @@ export var visible = true setget set_visible
 # ABSTRACT
 func execute():
 	pass
+	
 func set_child_visibility():
 	for child in get_children():
 		child.visible = visible
@@ -48,6 +49,8 @@ func toggle_selected(index):
 		option.get_node("Selected").hide()
 
 func _input(event):
+	get_tree().set_input_as_handled()
+	
 	if not event is InputEventKey:
 		return
 	elif event.is_action_pressed("ui_accept"):

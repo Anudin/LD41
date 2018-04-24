@@ -14,6 +14,7 @@ extends Node2D
 
 # Save doesn't work
 # Respawn doesn't work
+# Level transitions
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
