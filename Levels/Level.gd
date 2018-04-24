@@ -10,24 +10,20 @@ export(PackedScene) var Movement
 export(String) var FOLLOWING_SCENE_PATH
 export(AudioStream) var BACKGROUND_MUSIC
 
-onready var timeout = Timer.new()
+var restart_game = false
 
-# Implement in each script
-func win_condition():
-	pass
-
-# Implement if needed
+# ABSTRACT
 func save():
 	return {}
 
 func before():
 	pass
 
-func _ready():	
-	add_child(timeout)
-	timeout.wait_time = 1.5
-	timeout.connect("timeout", self, "_on_timeout")
+func after():
+	queue_free()
+	get_parent().remove_child(self)
 
+func _ready():
 	$"/root/Main/Player/LeftMarker".visible = SHOW_DIR_HINT
 	$"/root/Main/Player/RightMarker".visible = SHOW_DIR_HINT
 	$"/root/Main/Player".change_movement(Movement.instance())
@@ -38,16 +34,12 @@ func _ready():
 	before()
 
 func _on_player_died():
-	$"/root/Main".player_died()
-
-func after():
-	queue_free()
-	get_parent().remove_child(self)
+	after()
+	restart_game = true
 
 func _process(delta):
-	if win_condition() and timeout.is_stopped():
-		timeout.start()
-
-func _on_timeout():
-	set_process(false)
-	emit_signal("level_finished", FOLLOWING_SCENE_PATH)
+	if win_condition():
+		after()
+		emit_signal("level_finished", FOLLOWING_SCENE_PATH)
+	elif restart_game:
+		$"/root/Main".call_deferred("restart_game")

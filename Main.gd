@@ -101,11 +101,7 @@ func update_temp_commands_display():
 func _on_health_changed(health):	
 	$UI/PlayerHealth.value = clamp(health, 0, 100)
 
-func player_died():
-	call_deferred("restart_game")
-
 func restart_game():
-	$Level/Level.after()
 	save_game()
 	
 	var main = load("res://Main.tscn").instance()
@@ -132,7 +128,6 @@ func change_level(path, args = null):
 	if not has_node("Level/Level"):
 		$Level.add_child(level)
 	else:
-		$Level/Level.after()
 		$Level.add_child(level)
 		save_game()
 	
