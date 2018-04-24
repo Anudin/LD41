@@ -18,11 +18,12 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 layer = 2
 script = ExtResource( 2 )
+visible = false
 
 [node name="Background" parent="." index="0"]
 
 visible = false
-position = Vector2( 0.540344, 0 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="Options" parent="." index="1"]
 

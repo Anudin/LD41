@@ -13,6 +13,7 @@ extends Node2D
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
+# Quirks: Can't save script when no scene is opened
 
 # LD:
 # Contrast
@@ -21,6 +22,8 @@ extends Node2D
 
 # Post LD:
 # Level transitions
+
+# Menu invisible not working
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
