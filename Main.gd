@@ -22,8 +22,10 @@ var level_path
 
 func toggle_audio():	
 	if play_audio:
+		play_audio = false
 		AudioServer.set_bus_volume_db(0, -60)
 	else:
+		play_audio = true
 		AudioServer.set_bus_volume_db(0, -3)
 
 func pause():

@@ -20,7 +20,7 @@ func _on_area_entered(area):
 			var index = randi()%responses.size()
 			$Text.text = responses[index]
 			responses.remove(index)
-			area.get_parent().velocity = Vector2(0,0)
+			area.velocity = Vector2(0,0)
 		
 		$Text.show()
 		$AnimationPlayer.play("fade_text")
