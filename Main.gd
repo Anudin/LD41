@@ -7,14 +7,17 @@ extends Node2D
 # Project structure
 # Boolean toggle helper
 # Particles - trails!, smoke, blood etc.
+# Use input mapping
 
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
 
-# Save doesn't work
-# Respawn doesn't work
+# Contrast
+# Highscore
 # Level transitions
+# Difficulty setting
+# Save audio settings
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
@@ -109,9 +112,9 @@ func restart_game():
 	main.play_audio = play_audio
 	
 	var root = $"/root"
+	queue_free()
 	root.remove_child($"/root/Main")
 	root.add_child(main)
-	queue_free()
 
 func change_level(path, args = null):
 	level_path = path
@@ -128,6 +131,7 @@ func change_level(path, args = null):
 	if not has_node("Level/Level"):
 		$Level.add_child(level)
 	else:
+		$Level/Level.delete()
 		$Level.add_child(level)
 		save_game()
 	

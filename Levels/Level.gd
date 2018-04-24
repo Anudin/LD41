@@ -20,9 +20,12 @@ func before():
 	pass
 
 func after():
+	pass
+
+func delete():
 	queue_free()
 	get_parent().remove_child(self)
-
+	
 func _ready():
 	$"/root/Main/Player".health = 100
 	$"/root/Main/Player/LeftMarker".visible = SHOW_DIR_HINT
@@ -42,4 +45,5 @@ func _process(delta):
 		after()
 		emit_signal("level_finished", FOLLOWING_SCENE_PATH)
 	elif restart_game:
+		after()
 		$"/root/Main".call_deferred("restart_game")
