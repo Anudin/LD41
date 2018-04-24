@@ -13,6 +13,7 @@ extends Node2D
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
 
+# Update score to waves!
 # Contrast
 # Highscore
 # Level transitions
