@@ -22,13 +22,6 @@ func _ready():
 	emit_signal("health_changed", health)
 
 func _process(delta):
-	while(reset_position and $Area2D.get_overlapping_areas().size() != 0):
-		position -= direction
-		return
-	
-	last_position = position
-	position += velocity * delta
-	
 	if velocity != Vector2(0,0):
 		play("default")
 		$AudioEngineSound.play()
@@ -39,6 +32,14 @@ func _process(delta):
 	# Rotate labels so they face upside in case the player was moved
 	$RightMarker.global_rotation = 0
 	$LeftMarker.global_rotation = 0
+
+func _physics_process(delta):
+	while(reset_position and $Area2D.get_overlapping_areas().size() != 0):
+		position -= direction
+		return
+	
+	last_position = position
+	position += velocity * delta
 
 func _on_text_command(command):
 	if command == "shoot":				

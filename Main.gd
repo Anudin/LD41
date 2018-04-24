@@ -6,7 +6,7 @@ extends Node2D
 # Naming conventions
 # Project structure
 # Boolean toggle helper
-# Save settings as soon as they're set and load from file.
+
 # TODO: Particles - trails!, smoke, blood etc.
 
 # Quirks: Can't rename folder (in use?)
@@ -15,6 +15,8 @@ extends Node2D
 
 # Fix second "enter" to use pause screen - pause screen only works in 1,2,end
 # Main menu: difficulty
+
+# Save settings as soon as they're set and load from file.
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}

@@ -9,7 +9,7 @@ var speed = 30
 func _ready():
 	pass
 
-func _process(delta):	
+func _physics_process(delta):
 	var angle_to_player = rad2deg(Parent.get_angle_to(Player.position))
 	var modifiers = 1
 	
