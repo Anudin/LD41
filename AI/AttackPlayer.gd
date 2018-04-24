@@ -19,20 +19,23 @@ func _physics_process(delta):
 	Parent.position += (Player.position - Parent.position).normalized() * speed * delta * modifiers
 
 func _on_animation_finished():
-	pass
+	if Parent.get_node("Body").animation == "explode":
+		Parent.alive = false
 
+# Switch on animation finish
 func explode():
 	set_process(false)
 	set_physics_process(false)
-	Parent.z_index = -1
+	
 	Parent.get_node("AudioStreamPlayer").play()
-	Parent.get_node("Shadow").hide()
+	Parent.get_node("Body").play("explode")
 	Parent.get_node("AnimationPlayer").stop()
+	
+	Parent.z_index = -1
+	Parent.rotate(deg2rad(randi()%135-90))
 	Parent.get_node("CollisionShape2D").disabled = true
 	Parent.get_node("ExplosionTrigger").disabled = true
-	Parent.alive = false
-	Parent.rotate(deg2rad(randi()%135-90))
-	Parent.get_node("Body").play("explode")
+	Parent.get_node("Shadow").hide()
 
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 	match self_shape:

@@ -24,6 +24,7 @@ func after():
 	get_parent().remove_child(self)
 
 func _ready():
+	$"/root/Main/Player".health = 100
 	$"/root/Main/Player/LeftMarker".visible = SHOW_DIR_HINT
 	$"/root/Main/Player/RightMarker".visible = SHOW_DIR_HINT
 	$"/root/Main/Player".change_movement(Movement.instance())
