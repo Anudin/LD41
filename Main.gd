@@ -9,6 +9,7 @@ extends Node2D
 # Particles - trails!, smoke, blood etc.
 # Use input mapping
 # Global message propagation
+# Build system
 
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
@@ -16,14 +17,18 @@ extends Node2D
 # Quirks: Can't save script when no scene is opened
 
 # LD:
+# Menu invisible not working
+# Better collision resolving
 # Contrast
-# Difficulty setting
 # Save audio settings
 
 # Post LD:
+# Change progression?
 # Level transitions
 
-# Menu invisible not working
+# Anounce in group, write-up on experience with Godot 3.0
+
+# Difficulty setting
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
