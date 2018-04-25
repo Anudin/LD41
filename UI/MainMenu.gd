@@ -1,3 +1,5 @@
+tool
+
 extends "res://UI/Menu.gd"
 
 signal play_audio

@@ -1,3 +1,5 @@
+tool
+
 extends "res://UI/Menu.gd"
 
 # class member variables go here, for example:

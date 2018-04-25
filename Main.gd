@@ -17,7 +17,6 @@ extends Node2D
 # Quirks: Can't save script when no scene is opened
 
 # LD:
-# Menu invisible not working
 # Better collision resolving
 # Contrast
 # Save audio settings
