@@ -10,24 +10,28 @@ extends Node2D
 # Use input mapping
 # Global message propagation
 # Build system
+# Work with Google Docs, seperate TODOs from code
 
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
 # Quirks: Can't save script when no scene is opened
 
-# LD:
+# V 1.0:
 # Better collision resolving
 # Contrast
 # Save audio settings
 
-# Post LD:
+# V 2.0: Anounce in group, write-up on experience with Godot 3.0
 # Grid based movement / # Change tutorial order to allow use of queue?
-# Change progression?
-# Level transitions
+# Online scoreboard.
 # Difficulty setting
+# Level transitions
 
-# Anounce in group, write-up on experience with Godot 3.0
+# V 3.0:
+# Change progression?
+# Add multiplayer?
+# Add more learning type elements
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
