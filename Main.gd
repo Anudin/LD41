@@ -22,12 +22,12 @@ extends Node2D
 # Save audio settings
 
 # Post LD:
+# Grid based movement / # Change tutorial order to allow use of queue?
 # Change progression?
 # Level transitions
+# Difficulty setting
 
 # Anounce in group, write-up on experience with Godot 3.0
-
-# Difficulty setting
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
