@@ -16,7 +16,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -163,8 +163,6 @@ _sections_unfolded = [ "Rect", "Textures" ]
 position = Vector2( 640, 360 )
 
 [node name="PauseMenu" parent="." index="6" instance=ExtResource( 7 )]
-
-layer = 2
 
 [connection signal="queue_updated" from="UI/TextInput" to="." method="_on_queue_updated"]
 

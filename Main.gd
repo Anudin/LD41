@@ -19,10 +19,12 @@ extends Node2D
 
 # V 1.0:
 # Better collision resolving
+# Text blur background / Expand tutorial text
 # Contrast
 # Save audio settings
 
 # V 2.0: Anounce in group, write-up on experience with Godot 3.0
+# Don't let the player win through suiciding, give win screen
 # Grid based movement / # Change tutorial order to allow use of queue?
 # Online scoreboard.
 # Difficulty setting
@@ -53,8 +55,9 @@ func pause():
 	$PauseMenu.toggle_visibility()
 	get_tree().paused = true
 
-func _unhandled_input(event):
+func _unhandled_input(event):	
 	if event.is_action_pressed("ui_cancel"):
+		print(event is InputEventJoypadButton)
 		pause()
 
 func _ready():
