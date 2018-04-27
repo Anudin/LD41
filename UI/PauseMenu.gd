@@ -19,7 +19,7 @@ func execute():
 		emit_signal("play_audio")
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("strict_cancel"):
 		hide()
 
 func hide():

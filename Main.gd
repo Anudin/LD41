@@ -12,6 +12,7 @@ extends Node2D
 # Build system
 # Work with Google Docs, seperate TODOs from code
 
+# Quirks: Chrome receives controller input even when none is present
 # Quirks: Can't rename folder (in use?)
 # Quirks: Child remove doesn't work...
 # Quirks: Area might be null
@@ -56,7 +57,7 @@ func pause():
 	get_tree().paused = true
 
 func _unhandled_input(event):	
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("strict_cancel"):
 		print(event is InputEventJoypadButton)
 		pause()
 
