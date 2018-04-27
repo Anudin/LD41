@@ -12,7 +12,6 @@ var velocity = Vector2(0,0)
 var last_position
 
 var health = 100 setget set_health
-var reset_position = false
 var dead = false
 
 func set_health(value):
@@ -35,12 +34,13 @@ func _process(delta):
 	$LeftMarker.global_rotation = 0
 
 func _physics_process(delta):
-	while(reset_position and get_overlapping_areas().size() != 0):
-		position -= direction
-		return
-	
 	last_position = position
 	position += velocity * delta
+	
+	$RayCast2D.force_raycast_update()
+	if $RayCast2D.is_colliding():
+		velocity = Vector2(0,0)
+		position = last_position
 
 func _on_text_command(command):
 	if command == "shoot":				
@@ -59,11 +59,6 @@ func _on_hit():
 		velocity = Vector2(0,0)
 		$Body.play("explode")
 
-func _on_area_shape_entered(area_id, area, area_shape, self_shape):	
-	if area.is_in_group("walls"):
-		velocity = Vector2(0,0)
-		reset_position = true
-
 func change_movement(movement):
 	if has_node("Movement"):
 		$Movement.queue_free()
@@ -74,11 +69,3 @@ func change_movement(movement):
 func _on_animation_finished():
 	if dead and $Body.animation == "explode":
 		emit_signal("player_died")
-
-
-func _on_area_shape_exited(area_id, area, area_shape, self_shape):
-	if area == null:
-		return
-	
-	if area.is_in_group("walls"):
-		reset_position = false
