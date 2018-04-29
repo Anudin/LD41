@@ -6,10 +6,10 @@
 [ext_resource path="res://Player/right_marker.png" type="Texture" id=4]
 [ext_resource path="res://Player/left_marker.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 30 )
+extents = Vector2( 14.8737, 27.1864 )
 
 [node name="Player" type="Area2D" index="0"]
 
@@ -92,16 +92,13 @@ _sections_unfolded = [ "Drag Margin", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
 
-position = Vector2( 0, 6 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 0.0379638, 5.99987 )
+scale = Vector2( 1, 1.06603 )
+shape = SubResource( 2 )
 
-[node name="RayCast2D" type="RayCast2D" parent="." index="7"]
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
 
-enabled = false
-exclude_parent = true
-cast_to = Vector2( 0, 34 )
-collision_mask = 8
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]
 
 [connection signal="animation_finished" from="Body" to="." method="_on_animation_finished"]
 

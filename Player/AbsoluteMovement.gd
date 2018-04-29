@@ -15,8 +15,6 @@ func _on_text_command(command):
 	if command == "stop":
 		Player.velocity = Vector2(0,0)
 	else:
-		var rotation = Player.rotation
-		
 		match command:
 			"up":
 				Player.rotation = deg2rad(-180)
@@ -32,15 +30,8 @@ func _on_text_command(command):
 				Player.velocity.y = 0
 			"right":
 				Player.rotation = deg2rad(-90)
-				Player.direction = Vector2(1,0)	
+				Player.direction = Vector2(1,0)
 				Player.velocity.y = 0
-		
-		var raycast = Player.get_node("RayCast2D")
-		raycast.force_raycast_update()
-		
-		if raycast.is_colliding():
-			Player.rotation = rotation
-			return
 		
 		# Direct change of direction
 		if sign(Player.velocity.x) != sign(Player.direction.x) or \
