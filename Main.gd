@@ -11,6 +11,7 @@ extends Node2D
 # Global message propagation
 # Build system
 # Work with Google Docs, seperate TODOs from code
+# Look at bullet-hell demo
 
 # Quirks: Chrome receives controller input even when none is present
 # Quirks: Can't rename folder (in use?)
