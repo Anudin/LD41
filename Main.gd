@@ -12,6 +12,9 @@ extends Node2D
 # Build system
 # Work with Google Docs, seperate TODOs from code
 # Look at bullet-hell demo
+# Store global stuff with autoload and tree metadata
+# Check SceneTree.change_scene() and the scene switcher example (on autoload)
+# Create a template with simple save / load, scene switching, global messaging
 
 # Quirks: Chrome receives controller input even when none is present
 # Quirks: Can't rename folder (in use?)
@@ -64,7 +67,7 @@ func _unhandled_input(event):
 		print(event is InputEventJoypadButton)
 		pause()
 
-func _ready():
+func _ready():	
 	randomize()
 	
 	var game_loaded = false
