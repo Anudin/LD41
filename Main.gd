@@ -23,24 +23,27 @@ extends Node2D
 # Quirks: Can't save script when no scene is opened
 
 # V 1.0:
-# Save on new game
 # Better collision resolving
 # Save audio settings
 
 # V 2.0: Anounce in group, write-up on experience with Godot 3.0
 # Add wave display
-# Text blur background / Expand tutorial text
 # Contrast
 # Don't let the player win through suiciding, give win screen
-# Grid based movement / # Change tutorial order to allow use of queue?
-# Online scoreboard.
-# Difficulty setting
-# Level transitions
+# Text blur background / Expand tutorial text
+# Change tutorial order to allow use of queue?
 
 # V 3.0:
+# Grid based movement
+# Level transitions
+# Online scoreboard.
+# Difficulty setting
 # Change progression?
-# Add multiplayer?
 # Add more learning type elements
+
+# V 4.0:
+# Player 3D model + pixelation shader / Complete game in 3D?
+# Add multiplayer?
 
 var COMMANDS = []
 const TEMP_COMMANDS = {"whatever": "shoot"}
